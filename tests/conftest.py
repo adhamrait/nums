@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+import time
 import pytest
 import ray
 
@@ -41,6 +41,7 @@ def app_inst(request):
     yield app_inst
     app_inst.system.shutdown()
     ray.shutdown()
+    time.sleep(5)
 
 
 @pytest.fixture(scope="module", params=["serial", "ray-cyclic"])
@@ -55,6 +56,7 @@ def nps_app_inst(request):
     settings.system_name = request.param
     yield application_manager.instance()
     application_manager.destroy()
+    time.sleep(5)
 
 
 def get_app(mode):
