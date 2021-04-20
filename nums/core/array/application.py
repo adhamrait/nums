@@ -995,6 +995,20 @@ class ArrayApplication(object):
 
         return U, S, VT
 
+    def lu(self, X: BlockArray):
+        grid: ArrayGrid = X.grid.copy()
+        L: BlockArray = self.eye(shape=X.shape, block_shape=X.block_shape)
+        U: BlockArray = self.zeros(shape=X.shape, block_shape=X.block_shape)
+
+        # Create the L matrix
+        diag: BlockArray = self.diag(X)
+        print(diag.block_shape, L.block_shape)
+        for grid_entry in grid.get_entry_iterator():
+            break
+
+        return (L, U)
+
+
     def inv(self, X: BlockArray):
         return self._inv(self.system.inv, {}, X)
 

@@ -21,3 +21,8 @@ def qr(a, mode="reduced"):
     if mode != "reduced":
         raise NotImplementedError("Only reduced QR decomposition is supported.")
     return _instance().qr(a)
+
+def lu(a, mode="stable"):
+    if mode != "stable":
+        raise NotImplementedError("Only stable LU decomposition is supported.")
+    return _instance().lu(a)

@@ -277,6 +277,9 @@ class ComputeCls(ComputeImp):
 
     def inv(self, arr):
         return np.linalg.inv(arr)
+    
+    def lu(self, arr):
+        return np.linalg.lu(arr)
 
     # Boolean
 
