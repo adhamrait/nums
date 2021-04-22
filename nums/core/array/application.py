@@ -1013,30 +1013,26 @@ class ArrayApplication(object):
                     syskwargs=syskwargs)
         return ret
 
-    # for k in range(n):
-    #     divisor = lu[k, k]
-    #     for j in range(k+1, n):
-    #         factor = lu[j, k] / divisor
-    #         lu[j, k] = factor
-    #         lu[j, k+1:] -= lu[k, k+1:] * factor
+    def lu_block_decompose(self, X: np.ndarray, P: np.ndarray, L_inv: np.ndarray, U_inv: np.ndarray):
+        if len(X) == 1:
+            # Only one block, perform single-block lu decomp
+            X_block: Block = X[0, 0]
+            P[0, 0].oid, L_inv[0, 0].oid, U_inv[0, 0].oid = self.system.lu_inv(X[0, 0].oid, 
+                syskwargs={"grid_entry": X_block.grid_entry, "grid_shape": X_block.grid_shape})
+        # else:
+        #     # Must do blocked lu decomp
+            
+        
+        return P, L_inv, U_inv
 
     def lu_inv(self, X: BlockArray):
         assert (X.shape[0] == X.shape[1])   
-        # make it a single block
-        original_block_shape = X.block_shape
-        result: BlockArray = X.reshape(block_shape=X.shape)
-        grid: ArrayGrid = result.grid
+        grid = X.grid.copy()
         P: BlockArray = BlockArray(grid, self.system)
         L_inv: BlockArray = BlockArray(grid, self.system)
         U_inv: BlockArray = BlockArray(grid, self.system)
-        P.blocks[0, 0].oid, L_inv.blocks[0,0].oid, U_inv.blocks[0,0].oid = self.system.lu_inv(
-            result.blocks[0, 0].oid,
-            syskwargs={
-                "grid_entry": (0, 0),
-                "grid_shape": (1, 1)
-            })
-
-        return (U_inv @ L_inv @ P).reshape(block_shape=original_block_shape)
+        self.lu_block_decompose(X.blocks, P.blocks, L_inv.blocks, U_inv.blocks)
+        return U_inv @ L_inv @ P
 
 
     def inv(self, X: BlockArray):

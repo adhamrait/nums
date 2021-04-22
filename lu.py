@@ -51,7 +51,9 @@ if not bool(app.allclose(lu_inverse, expected_inverse)):
     print("\n")
     print("X: \n", X.get())
 
-lu_inverse_impl = app.lu_inv(X)
+block_shape = X.block_shape
+
+lu_inverse_impl = app.lu_inv(X.reshape(block_shape=X.shape)).reshape(block_shape=block_shape)
 
 # check to see if the parallel implementation is correct
 if not bool(app.allclose(lu_inverse_impl, expected_inverse)):
