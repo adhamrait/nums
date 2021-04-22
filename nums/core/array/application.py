@@ -1020,46 +1020,27 @@ class ArrayApplication(object):
     #         lu[j, k] = factor
     #         lu[j, k+1:] -= lu[k, k+1:] * factor
 
-    def lu(self, X: BlockArray):
+    def lu_inv(self, X: BlockArray):
         assert (X.shape[0] == X.shape[1])   
-        LU: BlockArray = X.copy()
-        grid: ArrayGrid = LU.grid.copy()
-        grid_meta = grid.to_meta()
-        # Iterate through the columns
-        for k in range(1, X.shape[0]):
-            block_k_row = k//grid.block_shape[0]
-            block_k_col = k//grid.block_shape[1]
-            k_row = k%grid.block_shape[0]
-            k_col = k%grid.block_shape[1]
-            divisor = LU.blocks[block_k_row, block_k_col].get()[k_row, k_col]
-            for block_j_row in range(block_k_row, grid.grid_shape[0]):
-                # Update L
-                j_grid_entry = (block_j_row, block_k_col)
-                factor: Block = LU.blocks[j_grid_entry] / divisor
-                if block_j_row == block_k_row:
-                    # We only want to update the entries from k+1 onwards
-                    index_pairs = [((j, k_col),(j, k_col)) for j in range(k_row + 1, grid.block_shape[0])]
-                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor.oid, index_pairs)
-                    for block_i_col in range(block_k_col, grid.grid_shape[1]):
-                        i_grid_entry = (block_j_row, block_i_col)
-                        pivot_grid_entry = (block_k_row, block_i_col) * factor
-                else:
-                    index_pairs = [((j, k_col),(j, k_col)) for j in range(0, grid.block_shape[0])]
-                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor, index_pairs)
-                    for block_i_col in range(block_k_col, grid.grid_shape[1]):
-                        i_grid_entry = (block_j_row, block_i_col)
-                        pivot_grid_entry = (block_k_row, block_i_col) * factor
+        # make it a single block
+        original_block_shape = X.block_shape
+        result: BlockArray = X.reshape(block_shape=X.shape)
+        grid: ArrayGrid = result.grid
+        P: BlockArray = BlockArray(grid, self.system)
+        L_inv: BlockArray = BlockArray(grid, self.system)
+        U_inv: BlockArray = BlockArray(grid, self.system)
+        P.blocks[0, 0].oid, L_inv.blocks[0,0].oid, U_inv.blocks[0,0].oid = self.system.lu_inv(
+            result.blocks[0, 0].oid,
+            syskwargs={
+                "grid_entry": (0, 0),
+                "grid_shape": (1, 1)
+            })
 
-
-
-
-
-
-        return LU
+        return (U_inv @ L_inv @ P).reshape(block_shape=original_block_shape)
 
 
     def inv(self, X: BlockArray):
-        return self._inv(self.system.inv, {}, X)
+        return self._iv(self.system.inv, {}, X)
 
     def _inv(self, remote_func, kwargs, X: BlockArray):
         # TODO (hme): Implement scalable version.

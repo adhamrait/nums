@@ -13,10 +13,8 @@ system: System = app.system
 
 # X: BlockArray = app.random.random(shape=(4,4), block_shape=(2,2))
 
-# Ensure x is stable
 np.random.seed(69)
 x = np.random.rand(4, 4)
-x = scipy_lu(x)[0].T @ x
 X: BlockArray = BlockArray.from_np(
     x,
     block_shape=(2, 2),
@@ -24,67 +22,40 @@ X: BlockArray = BlockArray.from_np(
     system=system,
 )
 
-# expected_inverse: BlockArray = BlockArray.from_np(
-#     np.linalg.inv(X.get()),
-#     block_shape=(2, 2),
-#     copy=T    rue,
-#     system=system,
-# )
+expected_inverse: BlockArray = BlockArray.from_np(
+    np.linalg.inv(X.get()),
+    block_shape=(2, 2),
+    copy=True,
+    system=system,
+)
 
-def expected_lu(A: BlockArray):
+def lu_inv(A: BlockArray):
     p, l, u = scipy_lu(A.get())
     # For now, we are not pivoting...
-    assert (p == np.eye(p.shape[0])).all()
-    LU: BlockArray = BlockArray.from_np(
-        u + l - np.eye(l.shape[0], l.shape[1]),
+    l_inv = np.linalg.inv(l)
+    u_inv = np.linalg.inv(u)
+    inv: BlockArray = BlockArray.from_np(
+        u_inv.dot(l_inv.dot(p.T)),
         block_shape=(2, 2),
         copy=True,
         system=system,
     )
-    return LU
+    return inv
 
+lu_inverse = lu_inv(X)
 
-# for k in range(n):
-#     for j in range(k+1, n):
-#         factor = lu[j, k] / lu[k, k]
-#         lu[j, k] = factor
-#         for i in range(k+1, n):
-#             lu[j, i] -= factor * lu[k, i]
-
-def serial_lu(A: BlockArray):
-    assert A.shape[0] == A.shape[1]
-    n = A.shape[0]
-    lu = np.copy(A.get())
-
-    for k in range(n):
-        # row = lu[k, k+1:]
-        factors = lu / lu[k, k]
-        lu[k+1:, k] = factors[k+1:, k]
-        lu[k+1:, k+1:] -= np.outer(factors[:, k], lu[k, :])[k+1:, k+1:]
-
-    LU: BlockArray = BlockArray.from_np(
-        lu,
-        block_shape=X.block_shape,
-        copy=True,
-        system=system,
-    )
-    return LU
-
-LU_ser = serial_lu(X)
-LU_exp = expected_lu(X)
-
-# check to see if the serial implementation is correct
-if not bool(app.allclose(LU_ser, LU_exp)):
-    print("LU_exp: \n", LU_exp.get())
-    print("LU_ser: \n", LU_ser.get())
+# check to see if the parallel implementation is correct
+if not bool(app.allclose(lu_inverse, expected_inverse)):
+    print("lu_inverse: \n", lu_inverse.get())
+    print("expected_inverse: \n", expected_inverse.get())
     print("\n")
     print("X: \n", X.get())
 
+lu_inverse_impl = app.lu_inv(X)
 
-# LU_par= app.lu(X)
-# # check to see if the parallel implementation is correct
-# if not bool(app.allclose(LU_par, LU_exp)):
-#     print("LU_exp: \n", LU_exp.get())
-#     print("LU_par: \n", LU_par.get())
-#     print("\n")
-#     print("X: \n", X.get())
+# check to see if the parallel implementation is correct
+if not bool(app.allclose(lu_inverse_impl, expected_inverse)):
+    print("lu_inverse_impl: \n", lu_inverse_impl.get())
+    print("expected_inverse: \n", expected_inverse.get())
+    print("\n")
+    print("X: \n", X.get())

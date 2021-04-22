@@ -141,7 +141,7 @@ class ComputeInterface(object):
 
     # TODO: include the p matrix in the returns for nonstable LU decompositions
     @method_meta(num_returns=2)
-    def lu(self, arr, syskwargs: Dict):
+    def lu_inv(self, arr, syskwargs: Dict):
         raise NotImplementedError()
 
     def tril(self, arr, syskwargs: Dict):
