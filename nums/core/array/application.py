@@ -974,6 +974,43 @@ class ArrayApplication(object):
 
         return Q, R
 
+    def temp_ts_inv(self, X: BlockArray):
+        # Matrix Inversion for X.T @ X where X is a tall-skinny matrix
+        # Particularly useful for least-squares regression on a large data corpus
+
+        # Step 1: Calculate the R of QR Factorization of X
+        # TODO
+
+        # Step 2: Compute R^-1
+        # Use the method described in https://www.cs.utexas.edu/users/flame/pubs/siam_spd.pdf
+        single_block = X.shape[0] == X.block_shape[0] and X.shape[1] == X.block_shape[1]
+        nonsquare_block = X.block_shape[0] != X.block_shape[1]
+
+        if single_block or nonsquare_block:
+            X = X.reshape(block_shape=(2,2))
+
+        # Setup metadata
+        full_shape = X.shape
+        grid_shape = X.grid.grid_shape
+        block_shape = X.block_shape
+
+        R_tl_shape = [0,0]
+        
+
+        # Calculate R_11^-1
+        r11_oid = X.blocks[(0,0)].oid
+        r11_inv_oid = self.system.inv(r11_oid, syskwargs={
+                                                  "grid_entry": (0, 0),
+                                                  "grid_shape": grid_shape
+                                              })
+        X.blocks[(0,0)].oid = r11_inv_oid
+        R_tl_shape = block_shape
+
+        # Continue while R_tl.shape != R.shape
+
+
+        return X
+
     def svd(self, X):
         # TODO(hme): Optimize by merging with direct qr to compute U directly,
         #  to avoid wasting space storing intermediate Q.
