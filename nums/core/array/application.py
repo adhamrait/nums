@@ -1021,7 +1021,7 @@ class ArrayApplication(object):
     #         lu[j, k+1:] -= lu[k, k+1:] * factor
 
     def lu(self, X: BlockArray):
-        assert (X.shape[0] == X.shape[1])
+        assert (X.shape[0] == X.shape[1])   
         LU: BlockArray = X.copy()
         grid: ArrayGrid = LU.grid.copy()
         grid_meta = grid.to_meta()
@@ -1035,11 +1035,11 @@ class ArrayApplication(object):
             for block_j_row in range(block_k_row, grid.grid_shape[0]):
                 # Update L
                 j_grid_entry = (block_j_row, block_k_col)
-                factor = LU.blocks[j_grid_entry] / divisor
+                factor: Block = LU.blocks[j_grid_entry] / divisor
                 if block_j_row == block_k_row:
                     # We only want to update the entries from k+1 onwards
                     index_pairs = [((j, k_col),(j, k_col)) for j in range(k_row + 1, grid.block_shape[0])]
-                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor, index_pairs)
+                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor.oid, index_pairs)
                     for block_i_col in range(block_k_col, grid.grid_shape[1]):
                         i_grid_entry = (block_j_row, block_i_col)
                         pivot_grid_entry = (block_k_row, block_i_col) * factor

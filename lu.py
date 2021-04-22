@@ -14,7 +14,8 @@ system: System = app.system
 # X: BlockArray = app.random.random(shape=(4,4), block_shape=(2,2))
 
 # Ensure x is stable
-x = np.random.rand(8, 8)
+np.random.seed(69)
+x = np.random.rand(4, 4)
 x = scipy_lu(x)[0].T @ x
 X: BlockArray = BlockArray.from_np(
     x,
@@ -50,24 +51,16 @@ def expected_lu(A: BlockArray):
 #         for i in range(k+1, n):
 #             lu[j, i] -= factor * lu[k, i]
 
-
-
 def serial_lu(A: BlockArray):
     assert A.shape[0] == A.shape[1]
     n = A.shape[0]
     lu = np.copy(A.get())
-    grid = A.grid.copy()
 
     for k in range(n):
-        row = lu[k, k+1:]
-        factor = lu / lu[k, k]
-        lu[k+1:, k] = factor[k+1:, k]
-        lu[k+1:, k+1:] -= row[:, np.newaxis] * factor[k+1:, k+1:]
-
-        # for j in range(k+1, n):
-        #     factor = lu[j, k] / divisor
-        #     lu[j, k] = factor
-        #     lu[j, k+1:] -= row * factor
+        # row = lu[k, k+1:]
+        factors = lu / lu[k, k]
+        lu[k+1:, k] = factors[k+1:, k]
+        lu[k+1:, k+1:] -= np.outer(factors[:, k], lu[k, :])[k+1:, k+1:]
 
     LU: BlockArray = BlockArray.from_np(
         lu,
