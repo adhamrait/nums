@@ -79,7 +79,7 @@ doctest_fallback = {
     'msort', 'nancumprod', 'nancumsum', 'nanprod', 'partition', 'polysub', 'product',
     'ravel_multi_index', 'repeat', 'resize', 'roll', 'roots', 'rot90', 'round',
     'round_', 'searchsorted', 'setdiff1d', 'setxor1d', 'sometrue', 'sort_complex', 'swapaxes',
-    'tile', 'trapz', 'tri', 'tril', 'tril_indices_from', 'triu', 'triu_indices_from', 'union1d'
+    'tile', 'trapz', 'tri', 'tril_indices_from', 'triu', 'triu_indices_from', 'union1d'
 }
 
 manually_tested_fallback = {

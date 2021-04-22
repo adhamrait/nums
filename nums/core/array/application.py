@@ -995,18 +995,51 @@ class ArrayApplication(object):
 
         return U, S, VT
 
-    def lu(self, X: BlockArray):
+    def tril(self, X: BlockArray):
         grid: ArrayGrid = X.grid.copy()
-        L: BlockArray = self.eye(shape=X.shape, block_shape=X.block_shape)
-        U: BlockArray = self.zeros(shape=X.shape, block_shape=X.block_shape)
-
-        # Create the L matrix
-        diag: BlockArray = self.diag(X)
-        print(diag.block_shape, L.block_shape)
+        ret: BlockArray = BlockArray(grid, self.system)
+        grid_meta = grid.to_meta()
         for grid_entry in grid.get_entry_iterator():
-            break
+            syskwargs = {"grid_entry": grid_entry, "grid_shape": grid.grid_shape}
+            if grid_entry[0] == grid_entry[1]:
+                # On the diagonal...
+                ret.blocks[grid_entry].oid = self.system.tril(X.blocks[grid_entry].copy().oid, syskwargs=syskwargs)
+            elif grid_entry[0] > grid_entry[1]:
+                ret.blocks[grid_entry].oid = X.blocks[grid_entry].copy().oid
+            else:
+                ret.blocks[grid_entry].oid = self.system.new_block("zeros",
+                    grid_entry,
+                    grid_meta,
+                    syskwargs=syskwargs)
+        return ret
 
-        return (L, U)
+    # Does a iteration of LU on 
+    def lu_helper(self, LU: BlockArray, k):
+        grid: ArrayGrid = LU.grid.copy()
+        block_col = k//grid.block_shape[0]
+        block_row = k//grid.block_shape[1]
+        k_col = k%grid.block_shape[0]
+        k_row = k%grid.block_shape[1]
+        divisor = LU.blocks[block_col, block_row].get()[k_col, k_row]
+        for block_j in range(block_col, grid.block_shape[0]):
+            if block_j == block_col:
+                break;
+
+
+    # for k in range(n):
+    #     for j in range(k+1, n):
+    #         factor = lu[j, k] / lu[k, k]
+    #         lu[j, k] = factor
+    #         for i in range(k+1, n):
+    #             lu[j, i] -= factor * lu[k, i]
+
+    def lu(self, X: BlockArray):
+        LU: BlockArray = X.copy()
+        # Iterate through the columns
+        for k in range(1, X.shape[0]):
+            self.lu_helper(LU, k)
+            # Update the top-left block
+        return LU
 
 
     def inv(self, X: BlockArray):

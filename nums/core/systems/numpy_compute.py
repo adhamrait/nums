@@ -278,8 +278,18 @@ class ComputeCls(ComputeImp):
     def inv(self, arr):
         return np.linalg.inv(arr)
     
-    def lu(self, arr):
-        return np.linalg.lu(arr)
+    def lu(self, arr, k_col, k_row, divisor):
+        # for k in range(n):
+        #     for j in range(k+1, n):
+        #         l[j, k] = u[j, k] / u[k, k]
+        #         for i in range(k, n):
+        #             u[j, i] -= l[j, k] * u[k, i]
+        l = np.zeros(arr.shape)
+        u = np.zeros(arr.shape)
+        return l, u
+    
+    def tril(self, arr):
+        return np.tril(arr)
 
     # Boolean
 

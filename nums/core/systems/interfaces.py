@@ -144,6 +144,9 @@ class ComputeInterface(object):
     def lu(self, arr, syskwargs: Dict):
         raise NotImplementedError()
 
+    def tril(self, arr, syskwargs: Dict):
+        raise NotImplementedError()
+
     def inv(self, arr, syskwargs: Dict):
         raise NotImplementedError()
 
