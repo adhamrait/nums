@@ -42,12 +42,13 @@ def expected_lu(A: BlockArray):
     )
     return LU
 
-def update_lu(lu_block: np.array, jmin, imin, factor, k):
-    for j in range(jmin, lu_block.shape[0]):
-        factor = lu_block[j, k] / factor
-        lu_block[j, k] = factor
-        for i in range(imin, lu_block.shape[1]):
-            lu_block[j, i] -= factor * lu_block[k, i]
+
+# for k in range(n):
+#     for j in range(k+1, n):
+#         factor = lu[j, k] / lu[k, k]
+#         lu[j, k] = factor
+#         for i in range(k+1, n):
+#             lu[j, i] -= factor * lu[k, i]
 
 
 
@@ -58,16 +59,15 @@ def serial_lu(A: BlockArray):
     grid = A.grid.copy()
 
     for k in range(n):
-        block_col = k//grid.block_shape[0]
-        block_row = k//grid.block_shape[1]
-        k_col = k%grid.block_shape[0]
-        k_row = k%grid.block_shape[1]
-        for j_block in range(block_col, grid.block_shape[0]):
-            break
+        row = lu[k, k+1:]
+        factor = lu / lu[k, k]
+        lu[k+1:, k] = factor[k+1:, k]
+        lu[k+1:, k+1:] -= row[:, np.newaxis] * factor[k+1:, k+1:]
 
-
-
-
+        # for j in range(k+1, n):
+        #     factor = lu[j, k] / divisor
+        #     lu[j, k] = factor
+        #     lu[j, k+1:] -= row * factor
 
     LU: BlockArray = BlockArray.from_np(
         lu,

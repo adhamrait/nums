@@ -1013,32 +1013,48 @@ class ArrayApplication(object):
                     syskwargs=syskwargs)
         return ret
 
-    # Does a iteration of LU on 
-    def lu_helper(self, LU: BlockArray, k):
-        grid: ArrayGrid = LU.grid.copy()
-        block_col = k//grid.block_shape[0]
-        block_row = k//grid.block_shape[1]
-        k_col = k%grid.block_shape[0]
-        k_row = k%grid.block_shape[1]
-        divisor = LU.blocks[block_col, block_row].get()[k_col, k_row]
-        for block_j in range(block_col, grid.block_shape[0]):
-            if block_j == block_col:
-                break;
-
-
     # for k in range(n):
+    #     divisor = lu[k, k]
     #     for j in range(k+1, n):
-    #         factor = lu[j, k] / lu[k, k]
+    #         factor = lu[j, k] / divisor
     #         lu[j, k] = factor
-    #         for i in range(k+1, n):
-    #             lu[j, i] -= factor * lu[k, i]
+    #         lu[j, k+1:] -= lu[k, k+1:] * factor
 
     def lu(self, X: BlockArray):
+        assert (X.shape[0] == X.shape[1])
         LU: BlockArray = X.copy()
+        grid: ArrayGrid = LU.grid.copy()
+        grid_meta = grid.to_meta()
         # Iterate through the columns
         for k in range(1, X.shape[0]):
-            self.lu_helper(LU, k)
-            # Update the top-left block
+            block_k_row = k//grid.block_shape[0]
+            block_k_col = k//grid.block_shape[1]
+            k_row = k%grid.block_shape[0]
+            k_col = k%grid.block_shape[1]
+            divisor = LU.blocks[block_k_row, block_k_col].get()[k_row, k_col]
+            for block_j_row in range(block_k_row, grid.grid_shape[0]):
+                # Update L
+                j_grid_entry = (block_j_row, block_k_col)
+                factor = LU.blocks[j_grid_entry] / divisor
+                if block_j_row == block_k_row:
+                    # We only want to update the entries from k+1 onwards
+                    index_pairs = [((j, k_col),(j, k_col)) for j in range(k_row + 1, grid.block_shape[0])]
+                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor, index_pairs)
+                    for block_i_col in range(block_k_col, grid.grid_shape[1]):
+                        i_grid_entry = (block_j_row, block_i_col)
+                        pivot_grid_entry = (block_k_row, block_i_col) * factor
+                else:
+                    index_pairs = [((j, k_col),(j, k_col)) for j in range(0, grid.block_shape[0])]
+                    self.system.update_block_by_index(LU.blocks[j_grid_entry].oid, factor, index_pairs)
+                    for block_i_col in range(block_k_col, grid.grid_shape[1]):
+                        i_grid_entry = (block_j_row, block_i_col)
+                        pivot_grid_entry = (block_k_row, block_i_col) * factor
+
+
+
+
+
+
         return LU
 
 
