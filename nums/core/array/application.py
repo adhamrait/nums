@@ -1061,7 +1061,7 @@ class ArrayApplication(object):
 
 
     def inv(self, X: BlockArray):
-        return self._iv(self.system.inv, {}, X)
+        return self._inv(self.system.inv, {}, X)
 
     def _inv(self, remote_func, kwargs, X: BlockArray):
         # TODO (hme): Implement scalable version.
