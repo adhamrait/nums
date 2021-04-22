@@ -1013,26 +1013,51 @@ class ArrayApplication(object):
                     syskwargs=syskwargs)
         return ret
 
-    def lu_block_decompose(self, X: np.ndarray, P: np.ndarray, L_inv: np.ndarray, U_inv: np.ndarray):
-        if len(X) == 1:
+    def lu_block_decompose(self, X: BlockArray):
+
+        grid = X.grid.copy()
+        P: BlockArray = BlockArray.empty(X.shape, grid.block_shape, X.dtype, self.system)
+        L: BlockArray = BlockArray.empty(X.shape, grid.block_shape, X.dtype, self.system)
+        U: BlockArray = BlockArray.empty(X.shape, grid.block_shape, X.dtype, self.system)
+        if len(X.blocks) == 1:
             # Only one block, perform single-block lu decomp
-            X_block: Block = X[0, 0]
-            P[0, 0].oid, L_inv[0, 0].oid, U_inv[0, 0].oid = self.system.lu_inv(X[0, 0].oid, 
+            X_block: Block = X.blocks[0, 0]
+            P.blocks[0, 0].oid, L.blocks[0, 0].oid, U.blocks[0, 0].oid = self.system.lu_inv(X.blocks[0, 0].oid, 
                 syskwargs={"grid_entry": X_block.grid_entry, "grid_shape": X_block.grid_shape})
-        # else:
-        #     # Must do blocked lu decomp
-            
-        
-        return P, L_inv, U_inv
+        else:
+            # Must do blocked LU decomp
+            size = X.shape[0]//2
+
+            M1 = X[:size, :size]
+            M2 = X[:size, size:]
+            M3 = X[size:, :size]
+            M4 = X[size:, size:]
+
+            P1, L1, U1 = self.lu_block_decompose(M1)
+            U2 = L1 @ (P1 @ M2)
+            L2hat = M3 @ U1
+            Mhat = M4 - L2hat @ U2
+            P2, L3, U3 = self.lu_block_decompose(Mhat)
+            L2 = P2 @ L2hat
+
+            L[:size, :size] = L1
+            L[size:, :size] = (-L3 @ L2 @ L1)
+            L[size:, size:] = L3
+
+            U[:size, :size] = U1
+            U[:size, size:] = (-U1 @ U2 @ U3)
+            U[size:, size:] = U3
+
+            P[:size, :size] = P1
+            P[size:, size:] = P2
+        return P, L, U
 
     def lu_inv(self, X: BlockArray):
         assert (X.shape[0] == X.shape[1])   
         grid = X.grid.copy()
-        P: BlockArray = BlockArray(grid, self.system)
-        L_inv: BlockArray = BlockArray(grid, self.system)
-        U_inv: BlockArray = BlockArray(grid, self.system)
-        self.lu_block_decompose(X.blocks, P.blocks, L_inv.blocks, U_inv.blocks)
-        return U_inv @ L_inv @ P
+        P, L, U = self.lu_block_decompose(X)
+
+        return U @ L @ P
 
 
     def inv(self, X: BlockArray):

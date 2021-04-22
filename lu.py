@@ -14,7 +14,7 @@ system: System = app.system
 # X: BlockArray = app.random.random(shape=(4,4), block_shape=(2,2))
 
 np.random.seed(69)
-x = np.random.rand(4, 4)
+x = np.random.rand(64, 64)
 X: BlockArray = BlockArray.from_np(
     x,
     block_shape=(2, 2),
@@ -53,7 +53,7 @@ if not bool(app.allclose(lu_inverse, expected_inverse)):
 
 block_shape = X.block_shape
 
-lu_inverse_impl = app.lu_inv(X.reshape(block_shape=X.shape)).reshape(block_shape=block_shape)
+lu_inverse_impl = app.lu_inv(X)
 
 # check to see if the parallel implementation is correct
 if not bool(app.allclose(lu_inverse_impl, expected_inverse)):
