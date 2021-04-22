@@ -996,7 +996,6 @@ class ArrayApplication(object):
 
         R_tl_shape = [0,0]
         
-
         # Calculate R_11^-1
         r11_oid = X.blocks[(0,0)].oid
         r11_inv_oid = self.system.inv(r11_oid, syskwargs={
@@ -1007,7 +1006,33 @@ class ArrayApplication(object):
         R_tl_shape = block_shape
 
         # Continue while R_tl.shape != R.shape
+        while R_tl_shape[0] != full_shape[0] and R_tl_shape[1] != full_shape[1]:
+            # Calculate R11
+            R11_block = (R_tl_shape[0] // block_shape[0], R_tl_shape[1] // block_shape[1])
+            R11_oid = X.blocks[R11_block].oid
+            R11_inv_oid = self.system.inv(R11_oid, syskwargs={
+                                                            "grid_entry": R11_block,
+                                                            "grid_shape": grid_shape
+                                                        })
 
+            # Reset R11 inplace
+            X.blocks[R11_block].oid = R11_inv_oid
+
+            # Calculate R01
+            R01_oids = []
+            R01_sb_row, R01_sb_col = 0, R11_block[1] # sb -- start_block
+            R01_num_blocks = R11_block[0]
+            
+            for inc in range(R01_num_blocks):
+                R01_oids.append(X.blocks[(R01_sb_row + inc, R01_sb_col)].oid)
+            
+            # Perform matrix multiplication: R_01_1 = -R00 @ R01
+
+            # Perform matrix multiplication: R_01_2 = R_01_1 @ R_11_inv
+
+            # Reset R_01
+
+            # Recompute R_tl.shape 
 
         return X
 
