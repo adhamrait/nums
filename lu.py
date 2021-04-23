@@ -11,9 +11,12 @@ settings.system_name = "serial"
 app: ArrayApplication = instance()
 system: System = app.system
 
-np.random.seed(69)
-x = np.random.rand(16, 16)
-block_shape = (2, 2)
+np.random.seed(1)
+
+x = np.random.rand(64, 64)
+print(x.sum())
+block_shape = (4, 4)
+# n = 2**k *b
 X: BlockArray = BlockArray.from_np(
     x,
     block_shape=block_shape,
@@ -34,6 +37,7 @@ def lu_block_decomp(M):
         return(p.T, np.linalg.inv(l), np.linalg.inv(u))
     else:
         size = M.shape[0]//2
+
         M1 = M[:size, :size]
         M2 = M[:size, size:]
         M3 = M[size:, :size]

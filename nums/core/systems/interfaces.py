@@ -140,7 +140,7 @@ class ComputeInterface(object):
         raise NotImplementedError()
 
     # TODO: include the p matrix in the returns for nonstable LU decompositions
-    @method_meta(num_returns=2)
+    @method_meta(num_returns=3)
     def lu_inv(self, arr, syskwargs: Dict):
         raise NotImplementedError()
 
