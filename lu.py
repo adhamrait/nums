@@ -11,53 +11,82 @@ settings.system_name = "serial"
 app: ArrayApplication = instance()
 system: System = app.system
 
-# X: BlockArray = app.random.random(shape=(4,4), block_shape=(2,2))
-
 np.random.seed(69)
 x = np.random.rand(16, 16)
+block_shape = (2, 2)
 X: BlockArray = BlockArray.from_np(
     x,
-    block_shape=(2, 2),
+    block_shape=block_shape,
     copy=True,
     system=system,
 )
 
 expected_inverse: BlockArray = BlockArray.from_np(
     np.linalg.inv(X.get()),
-    block_shape=(2, 2),
+    block_shape=block_shape,
     copy=True,
     system=system,
 )
 
-def lu_inv(A: BlockArray):
-    p, l, u = scipy_lu(A.get())
-    # For now, we are not pivoting...
-    l_inv = np.linalg.inv(l)
-    u_inv = np.linalg.inv(u)
-    inv: BlockArray = BlockArray.from_np(
-        u_inv.dot(l_inv.dot(p.T)),
-        block_shape=(2, 2),
+def lu_block_decomp(M):
+    if M.shape == block_shape:
+        p, l, u = scipy_lu(M)
+        return(p.T, np.linalg.inv(l), np.linalg.inv(u))
+    else:
+        size = M.shape[0]//2
+        M1 = M[:size, :size]
+        M2 = M[:size, size:]
+        M3 = M[size:, :size]
+        M4 = M[size:, size:]
+
+        P1, L1, U1 = lu_block_decomp(M1)
+        U2 = L1.dot(P1.dot(M2))
+        L2hat = M3.dot(U1)
+        Mhat = M4 - L2hat.dot(U2)
+        P2, L3, U3 = lu_block_decomp(Mhat)
+        L2 = P2.dot(L2hat)
+
+        L = np.zeros(M.shape)
+        U = np.zeros(M.shape)
+        P = np.zeros(M.shape)
+
+        L[:size, :size] = L1
+        L[size:, :size] = -L3.dot(L2.dot(L1))
+        L[size:, size:] = L3
+
+        U[:size, :size] = U1
+        U[:size, size:] = -U1.dot(U2.dot(U3))
+        U[size:, size:] = U3
+
+        P[:size, :size] = P1
+        P[size:, size:] = P2
+
+    return P, L, U
+
+def lu_inv_sequential(X: BlockArray):
+    p, l, u = lu_block_decomp(X.get())
+    return BlockArray.from_np(
+        u.dot(l.dot(p)),
+        block_shape=block_shape,
         copy=True,
         system=system,
     )
-    return inv
 
-lu_inverse = lu_inv(X)
+lu_inverse = lu_inv_sequential(X)
+
 
 # check to see if the parallel implementation is correct
 if not bool(app.allclose(lu_inverse, expected_inverse)):
-    print("lu_inverse: \n", lu_inverse.get())
-    print("expected_inverse: \n", expected_inverse.get())
+    print("sequential: \n", lu_inverse.get())
+    print("expected: \n", expected_inverse.get())
     print("\n")
     print("X: \n", X.get())
 
-block_shape = X.block_shape
-
-lu_inverse_impl = app.lu_inv(X)
+lu_inverse_par = app.lu_inv(X)
 
 # check to see if the parallel implementation is correct
-if not bool(app.allclose(lu_inverse_impl, expected_inverse)):
-    print("lu_inverse_impl: \n", lu_inverse_impl.get())
-    print("expected_inverse: \n", expected_inverse.get())
+if not bool(app.allclose(lu_inverse_par, lu_inverse)):
+    print("parallel: \n", lu_inverse_par.get())
+    print("sequential: \n", lu_inverse.get())
     print("\n")
     print("X: \n", X.get())

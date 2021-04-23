@@ -1022,11 +1022,13 @@ class ArrayApplication(object):
         if len(X.blocks) == 1:
             # Only one block, perform single-block lu decomp
             X_block: Block = X.blocks[0, 0]
-            P.blocks[0, 0].oid, L.blocks[0, 0].oid, U.blocks[0, 0].oid = self.system.lu_inv(X.blocks[0, 0].oid, 
+            P.blocks[0, 0].oid, L.blocks[0, 0].oid, U.blocks[0, 0].oid = self.system.lu_inv(X.blocks[0, 0].oid,
                 syskwargs={"grid_entry": X_block.grid_entry, "grid_shape": X_block.grid_shape})
         else:
             # Must do blocked LU decomp
             size = X.blocks.shape[0]//2
+            # sanity check to ensure nice even recursion
+            assert size * 2 == X.blocks.shape[0]
             subshape = (X.shape[0]//2, X.shape[1]//2)
 
             M1 = BlockArray.from_blocks(X.blocks[:size, :size], subshape, self.system)
