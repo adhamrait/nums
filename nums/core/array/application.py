@@ -1026,12 +1026,13 @@ class ArrayApplication(object):
                 syskwargs={"grid_entry": X_block.grid_entry, "grid_shape": X_block.grid_shape})
         else:
             # Must do blocked LU decomp
-            size = X.shape[0]//2
+            size = X.blocks.shape[0]//2
+            subshape = (X.shape[0]//2, X.shape[1]//2)
 
-            M1 = X[:size, :size]
-            M2 = X[:size, size:]
-            M3 = X[size:, :size]
-            M4 = X[size:, size:]
+            M1 = BlockArray.from_blocks(X.blocks[:size, :size], subshape, self.system)
+            M2 = BlockArray.from_blocks(X.blocks[:size, size:], subshape, self.system)
+            M3 = BlockArray.from_blocks(X.blocks[size:, :size], subshape, self.system)
+            M4 = BlockArray.from_blocks(X.blocks[size:, size:], subshape, self.system)
 
             P1, L1, U1 = self.lu_block_decompose(M1)
             U2 = L1 @ (P1 @ M2)
@@ -1040,16 +1041,16 @@ class ArrayApplication(object):
             P2, L3, U3 = self.lu_block_decompose(Mhat)
             L2 = P2 @ L2hat
 
-            L[:size, :size] = L1
-            L[size:, :size] = (-L3 @ L2 @ L1)
-            L[size:, size:] = L3
+            L.blocks[:size, :size] = L1.blocks
+            L.blocks[size:, :size] = (-L3 @ L2 @ L1).blocks
+            L.blocks[size:, size:] = L3.blocks
 
-            U[:size, :size] = U1
-            U[:size, size:] = (-U1 @ U2 @ U3)
-            U[size:, size:] = U3
+            U.blocks[:size, :size] = U1.blocks
+            U.blocks[:size, size:] = (-U1 @ U2 @ U3).blocks
+            U.blocks[size:, size:] = U3.blocks
 
-            P[:size, :size] = P1
-            P[size:, size:] = P2
+            P.blocks[:size, :size] = P1.blocks
+            P.blocks[size:, size:] = P2.blocks
         return P, L, U
 
     def lu_inv(self, X: BlockArray):

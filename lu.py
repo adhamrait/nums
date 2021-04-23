@@ -14,7 +14,7 @@ system: System = app.system
 # X: BlockArray = app.random.random(shape=(4,4), block_shape=(2,2))
 
 np.random.seed(69)
-x = np.random.rand(64, 64)
+x = np.random.rand(16, 16)
 X: BlockArray = BlockArray.from_np(
     x,
     block_shape=(2, 2),
