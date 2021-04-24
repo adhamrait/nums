@@ -3,29 +3,23 @@ from nums.core.array.blockarray import BlockArray, Block
 from nums.core.array.application import ArrayApplication
 from nums.core.systems.systems import System
 from nums.core import settings
+import time
 
 import numpy as np
 from scipy.linalg import lu as scipy_lu
 
-settings.system_name = "serial"
 app: ArrayApplication = instance()
 system: System = app.system
 
 np.random.seed(1)
 
-x = np.random.rand(64, 64)
-print(x.sum())
-block_shape = (4, 4)
-# n = 2**k *b
+n = 1024
+b = 2
+
+x = np.random.rand(n, n)
+block_shape = (b, b)
 X: BlockArray = BlockArray.from_np(
     x,
-    block_shape=block_shape,
-    copy=True,
-    system=system,
-)
-
-expected_inverse: BlockArray = BlockArray.from_np(
-    np.linalg.inv(X.get()),
     block_shape=block_shape,
     copy=True,
     system=system,
@@ -76,21 +70,29 @@ def lu_inv_sequential(X: BlockArray):
         system=system,
     )
 
-lu_inverse = lu_inv_sequential(X)
-
-
-# check to see if the parallel implementation is correct
-if not bool(app.allclose(lu_inverse, expected_inverse)):
-    print("sequential: \n", lu_inverse.get())
-    print("expected: \n", expected_inverse.get())
-    print("\n")
-    print("X: \n", X.get())
-
+t_st = time.time()
 lu_inverse_par = app.lu_inv(X)
+_ = lu_inverse_par.get()
+t_lu = time.time()
+
+
+expected_inverse: BlockArray = BlockArray.from_np(
+    np.linalg.inv(X.get()),
+    block_shape=block_shape,
+    copy=True,
+    system=system,
+)
+_ = expected_inverse.get()
+t_ser = time.time()
 
 # check to see if the parallel implementation is correct
-if not bool(app.allclose(lu_inverse_par, lu_inverse)):
+if not bool(app.allclose(lu_inverse_par, expected_inverse)):
+    print("INCORRECT RESULTS")
     print("parallel: \n", lu_inverse_par.get())
-    print("sequential: \n", lu_inverse.get())
+    print("sequential: \n", expected_inverse.get())
     print("\n")
     print("X: \n", X.get())
+    exit(1)
+else:
+    # [n, b, parallel_time, serial_time]
+    print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ",")

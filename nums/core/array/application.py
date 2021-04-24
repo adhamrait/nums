@@ -1016,9 +1016,10 @@ class ArrayApplication(object):
     def lu_block_decompose(self, X: BlockArray):
 
         grid = X.grid.copy()
-        P: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
-        L: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
-        U: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
+        # P: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
+        P: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
+        L: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
+        U: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
         if len(X.blocks) == 1:
             # Only one block, perform single-block lu decomp
             X_block: Block = X.blocks[0, 0]
