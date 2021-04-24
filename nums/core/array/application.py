@@ -974,16 +974,9 @@ class ArrayApplication(object):
 
         return Q, R
 
-    def temp_ts_inv(self, X: BlockArray):
-        # Matrix Inversion for X.T @ X where X is a tall-skinny matrix
-        # Particularly useful for least-squares regression on a large data corpus
-
-        # Step 1: Calculate the R of QR Factorization of X
-        # Q, R = self.direct_tsqr(X, reshape=True)
-
-        # Step 2: Compute R^-1
+    def inv_uppertri(self, X: BlockArray):
+        # Inversion of an Upper Triangular Matrix
         # Use the method described in https://www.cs.utexas.edu/users/flame/pubs/siam_spd.pdf
-
         single_block = X.shape[0] == X.block_shape[0] and X.shape[1] == X.block_shape[1]
         nonsquare_block = X.block_shape[0] != X.block_shape[1]
 
@@ -1052,7 +1045,7 @@ class ArrayApplication(object):
 
                     # Calculate -R00 = 0 - R00
                     neg_R00_oid = self.system.bop("subtract", Z_oid, R00_oid, R00_bs, R00_bs, 
-                                                    False, False, axis=1, syskwargs={
+                                                    False, False, axes=1, syskwargs={
                                                         "grid_entry": (row_block, col_block),
                                                         "grid_shape": grid_shape
                                                     })
@@ -1091,9 +1084,21 @@ class ArrayApplication(object):
             R_tl_shape = (old_r + r11_r, old_c + r11_c)
 
         # By the time we finish, R = R_inv
-        # To calculate (X^TX)^-1, we need
-
         return R
+
+    def inv_tsqr(self, X: BlockArray):
+        # Matrix Inversion for X.T @ X where X is a tall-skinny matrix
+        # Particularly useful for least-squares regression on a large data corpus
+
+        # Step 1: Calculate the R of QR Factorization of X
+        Q, R = self.direct_tsqr(X, reshape=True)
+
+        # Step 2: Compute R^-1
+        R_inv = self.inv_uppertri(R)
+
+        # Step 3: Compute inv(X.T @ X) by R_inv @ R_inv.T
+        return R_inv @ R_inv.T
+        
 
     def svd(self, X):
         # TODO(hme): Optimize by merging with direct qr to compute U directly,
