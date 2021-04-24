@@ -979,10 +979,11 @@ class ArrayApplication(object):
         # Particularly useful for least-squares regression on a large data corpus
 
         # Step 1: Calculate the R of QR Factorization of X
-        # TODO
+        # Q, R = self.direct_tsqr(X, reshape=True)
 
         # Step 2: Compute R^-1
         # Use the method described in https://www.cs.utexas.edu/users/flame/pubs/siam_spd.pdf
+
         single_block = X.shape[0] == X.block_shape[0] and X.shape[1] == X.block_shape[1]
         nonsquare_block = X.block_shape[0] != X.block_shape[1]
 
@@ -994,47 +995,105 @@ class ArrayApplication(object):
         grid_shape = X.grid.grid_shape
         block_shape = X.block_shape
 
-        R_tl_shape = [0,0]
+        R = X.copy()
+        Zs = self.zeros(full_shape, block_shape, X.dtype)
         
         # Calculate R_11^-1
-        r11_oid = X.blocks[(0,0)].oid
+        r11_oid = R.blocks[(0,0)].oid
         r11_inv_oid = self.system.inv(r11_oid, syskwargs={
                                                   "grid_entry": (0, 0),
                                                   "grid_shape": grid_shape
                                               })
-        X.blocks[(0,0)].oid = r11_inv_oid
+        R.blocks[(0,0)].oid = r11_inv_oid
         R_tl_shape = block_shape
 
         # Continue while R_tl.shape != R.shape
         while R_tl_shape[0] != full_shape[0] and R_tl_shape[1] != full_shape[1]:
             # Calculate R11
-            R11_block = (R_tl_shape[0] // block_shape[0], R_tl_shape[1] // block_shape[1])
-            R11_oid = X.blocks[R11_block].oid
+            R11_block = (int(np.ceil(R_tl_shape[0] // block_shape[0])), int(np.ceil(R_tl_shape[1] // block_shape[1])))
+            R11_oid = R.blocks[R11_block].oid
+            R11_shape = R.blocks[R11_block].shape
+
             R11_inv_oid = self.system.inv(R11_oid, syskwargs={
                                                             "grid_entry": R11_block,
                                                             "grid_shape": grid_shape
                                                         })
 
             # Reset R11 inplace
-            X.blocks[R11_block].oid = R11_inv_oid
+            R.blocks[R11_block].oid = R11_inv_oid
 
             # Calculate R01
             R01_oids = []
+            R01_shapes = []
+            R01_grid_entries = []
             R01_sb_row, R01_sb_col = 0, R11_block[1] # sb -- start_block
             R01_num_blocks = R11_block[0]
             
+            # Collect data for R01
             for inc in range(R01_num_blocks):
-                R01_oids.append(X.blocks[(R01_sb_row + inc, R01_sb_col)].oid)
+                R01_oids.append(R.blocks[(R01_sb_row + inc, R01_sb_col)].oid)
+                R01_shapes.append(R.blocks[(R01_sb_row + inc, R01_sb_col)].shape)
+                R01_grid_entries.append((R01_sb_row + inc, R01_sb_col))
             
-            # Perform matrix multiplication: R_01_1 = -R00 @ R01
+            # Perform matrix multiplication: R01_1 = -R00 @ R01
+            R01_1_oids = []
+            for row_block in range(R01_num_blocks):
+                sub_oids = []
+
+                for col_block in range(R01_num_blocks):
+
+                    # Get data for R01 and R00
+                    R01_block_oid = R01_oids[col_block]
+                    
+                    R00_oid = R.blocks[(row_block, col_block)].oid
+                    Z_oid = Zs.blocks[(row_block, col_block)].oid
+
+                    R00_bs = R.blocks[(row_block, col_block)].shape
+
+                    # Calculate -R00 = 0 - R00
+                    neg_R00_oid = self.system.bop("subtract", Z_oid, R00_oid, R00_bs, R00_bs, 
+                                                    False, False, axis=1, syskwargs={
+                                                        "grid_entry": (row_block, col_block),
+                                                        "grid_shape": grid_shape
+                                                    })
+                    # Calculate -R00 @ R01
+                    sub_oids.append(self.system.bop("tensordot", neg_R00_oid, R01_oids[col_block], 
+                                        R00_bs, R01_shapes[col_block], False, False, axes=1, syskwargs={
+                                            "grid_entry": R01_grid_entries[col_block],
+                                            "grid_shape": grid_shape
+                                        }
+                                    ))
+                    
+                # Finished with one blocked mult
+                R01_1_oids.append(self.system.sum_reduce(*sub_oids, syskwargs={
+                    "grid_entry": R01_grid_entries[row_block],
+                    "grid_shape": grid_shape
+                }))
 
             # Perform matrix multiplication: R_01_2 = R_01_1 @ R_11_inv
+            R01_2_oids = []
+            for row_block in range(R01_num_blocks):
+                R01_2_oids.append(self.system.bop("tensordot", R01_1_oids[row_block], R11_inv_oid, 
+                                    R01_shapes[row_block], R11_shape, False, False, axes=1, syskwargs={
+                                        "grid_entry": R01_grid_entries[row_block],
+                                        "grid_shape": grid_shape
+                                    }
+                                ))
 
             # Reset R_01
+            for i, entry in enumerate(R01_grid_entries):
+                R.blocks[entry].oid = R01_2_oids[i]
 
             # Recompute R_tl.shape 
+            r11_r, r11_c = R11_shape
+            old_r, old_c = R_tl_shape
 
-        return X
+            R_tl_shape = (old_r + r11_r, old_c + r11_c)
+
+        # By the time we finish, R = R_inv
+        # To calculate (X^TX)^-1, we need
+
+        return R
 
     def svd(self, X):
         # TODO(hme): Optimize by merging with direct qr to compute U directly,
