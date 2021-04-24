@@ -977,6 +977,7 @@ class ArrayApplication(object):
     def inv_uppertri(self, X: BlockArray):
         # Inversion of an Upper Triangular Matrix
         # Use the method described in https://www.cs.utexas.edu/users/flame/pubs/siam_spd.pdf
+        assert X.shape[0] == X.shape[1], "This function only accepts square matrices"
         single_block = X.shape[0] == X.block_shape[0] and X.shape[1] == X.block_shape[1]
         nonsquare_block = X.block_shape[0] != X.block_shape[1]
 
