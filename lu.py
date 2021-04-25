@@ -11,9 +11,9 @@ app: ArrayApplication = instance()
 system: System = app.system
 
 np.random.seed(1)
-
-n = 1024*16
-b = 128*4*16
+k = 4
+b = 256
+n = b * 2 ** k
 
 block_shape = (b, b)
 X: BlockArray = app.random.random((n, n), block_shape)
@@ -82,7 +82,4 @@ t_ser = time.time()
 #     print("sequential: \n", expected_inverse.get())
 #     print("\n")
 #     print("X: \n", X.get())
-#     exit(1)
-# else:
-    # [n, b, parallel_time, serial_time]
 print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ",")

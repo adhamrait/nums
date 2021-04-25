@@ -1038,18 +1038,18 @@ class ArrayApplication(object):
             M4 = BlockArray.from_blocks(X.blocks[size:, size:], subshape, self.system)
 
             P1, L1, U1 = self.lu_block_decompose(M1)
-            U2 = L1 @ (P1 @ M2)
-            L2hat = M3 @ U1
-            Mhat = M4 - L2hat @ U2
+            T = U1 @ L1
+            Shat = M3 @ T
+            Mhat = M4 - Shat @ (P1 @ M2)
             P2, L3, U3 = self.lu_block_decompose(Mhat)
-            L2 = P2 @ L2hat
+            S = P2 @ Shat
 
             L.blocks[:size, :size] = L1.blocks
-            L.blocks[size:, :size] = (-L3 @ L2 @ L1).blocks
+            L.blocks[size:, :size] = (-L3 @ S).blocks
             L.blocks[size:, size:] = L3.blocks
 
             U.blocks[:size, :size] = U1.blocks
-            U.blocks[:size, size:] = (-U1 @ U2 @ U3).blocks
+            U.blocks[:size, size:] = (-T @ (P1 @ M2) @ U3).blocks
             U.blocks[size:, size:] = U3.blocks
 
             P.blocks[:size, :size] = P1.blocks
