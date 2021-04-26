@@ -3,6 +3,7 @@ import argparse
 import ray
 import nums.numpy as nps
 import nums
+import time
 from nums.core import settings
 
 
@@ -17,16 +18,30 @@ def main(address, work_dir, use_head, cluster_shape):
     })
 
     print("running nums operation")
+
+    k = 4
+    b = 256
+    n = b * 2 ** k
+
+    X =  nps.random.rand((n, n))
+    X.reshape(block_shape=(b, b))
     size = 10**4
     # Memory used is 8 * (10**4)**2
     # So this will be 800MB object.
-    x1 = nps.random.randn(size, size)
-    x2 = nps.random.randn(size, size)
-    result = x1 @ x2
-    print(result.touch())
-    print("writing result")
-    write_result = nums.write(work_dir + "/result", result)
-    write_result.get()
+    print("starting lu inversion")
+    t_st = time.time()
+    lu_inverse_par = nps.linalg.lu_inv(X)
+    _ = lu_inverse_par.get()
+    t_lu = time.time()
+
+
+    print("starting np inversion")
+    expected_inverse = nps.linalg. inv(X)
+    _ = expected_inverse.get()
+    t_ser = time.time()
+
+    print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ","
+
 
 
 if __name__ == "__main__":

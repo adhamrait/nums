@@ -1058,11 +1058,8 @@ class ArrayApplication(object):
 
     def lu_inv(self, X: BlockArray):
         assert (X.shape[0] == X.shape[1])   
-        grid = X.grid.copy()
         P, L, U = self.lu_block_decompose(X)
-
         return U @ L @ P
-
 
     def inv(self, X: BlockArray):
         return self._inv(self.system.inv, {}, X)

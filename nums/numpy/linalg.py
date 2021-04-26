@@ -21,3 +21,9 @@ def qr(a, mode="reduced"):
     if mode != "reduced":
         raise NotImplementedError("Only reduced QR decomposition is supported.")
     return _instance().qr(a)
+
+def lu_inv(a):
+    return _instance().lu_inv(a)
+
+def np_inv(a):
+    return _instance().inv(a)
