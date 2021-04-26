@@ -9,7 +9,7 @@ from nums.core import settings
 
 def main(address, work_dir, use_head, cluster_shape):
     settings.use_head = use_head
-    settings.cluster_shape = tuple(map(lambda x: int(x), ",".split(cluster_shape)))
+    settings.cluster_shape = (1,1)
     print("use_head", use_head)
     print("cluster_shape", cluster_shape)
     print("connecting to head node", address)
@@ -19,15 +19,12 @@ def main(address, work_dir, use_head, cluster_shape):
 
     print("running nums operation")
 
-    k = 4
-    b = 256
+    k = 6
+    b = 32
     n = b * 2 ** k
 
-    X =  nps.random.rand((n, n))
-    X.reshape(block_shape=(b, b))
-    size = 10**4
-    # Memory used is 8 * (10**4)**2
-    # So this will be 800MB object.
+    X =  nps.random.rand(n, n).reshape(block_shape=(b, b))
+    print(X.block_shape)
     print("starting lu inversion")
     t_st = time.time()
     lu_inverse_par = nps.linalg.lu_inv(X)
@@ -36,11 +33,11 @@ def main(address, work_dir, use_head, cluster_shape):
 
 
     print("starting np inversion")
-    expected_inverse = nps.linalg. inv(X)
+    expected_inverse = nps.linalg.np_inv(X)
     _ = expected_inverse.get()
     t_ser = time.time()
 
-    print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ","
+    print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ",")
 
 
 

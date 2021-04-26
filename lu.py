@@ -11,7 +11,7 @@ app: ArrayApplication = instance()
 system: System = app.system
 
 np.random.seed(1)
-k = 4
+k = 2   
 b = 256
 n = b * 2 ** k
 
