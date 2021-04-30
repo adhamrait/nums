@@ -2,7 +2,7 @@
 #SBATCH -N 2
 #SBATCH -C knl
 #SBATCH -p debug
-#SBATCH -t 00:10:00
+#SBATCH -t 00:30:00
 #SBATCH -J job-ray
 #SBATCH -o outputs/job-ray.o%j
 #SBATCH -e outputs/job-ray.e%j
