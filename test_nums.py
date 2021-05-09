@@ -9,7 +9,7 @@ from nums.core import settings
 
 def main(address, work_dir, use_head, cluster_shape):
     settings.use_head = use_head
-    settings.cluster_shape = (1,1)
+    settings.cluster_shape = tuple(map(lambda x: int(x), cluster_shape.split(",")))
     print("use_head", use_head)
     print("cluster_shape", cluster_shape)
     print("connecting to head node", address)
@@ -19,25 +19,18 @@ def main(address, work_dir, use_head, cluster_shape):
 
     print("running nums operation")
 
-    k = 6
-    b = 32
-    n = b * 2 ** k
+    b = 1024
+    n = b * 2 ** 4
+    A = nps.random.rand(n, n//1024).reshape(block_shape=(b, b))
+    t_start = time.time()
+    # Put experiment here
 
-    X =  nps.random.rand(n, n).reshape(block_shape=(b, b))
-    print(X.block_shape)
-    print("starting lu inversion")
-    t_st = time.time()
-    lu_inverse_par = nps.linalg.lu_inv(X)
-    _ = lu_inverse_par.get()
-    t_lu = time.time()
+    X = (A @ A.T).reshape(block_shape=(b, b))
+    _ = nps.linalg.lu_inv(X)
 
-
-    print("starting np inversion")
-    expected_inverse = nps.linalg.np_inv(X)
-    _ = expected_inverse.get()
-    t_ser = time.time()
-
-    print(str([n, b, t_lu-t_st, t_ser-t_lu]) + ",")
+    # Ecperiment done
+    t_elapsed = time.time() - t_start
+    print(str([n, t_elapsed]) + ",")
 
 
 
