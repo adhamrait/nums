@@ -97,7 +97,7 @@ def main(address, work_dir, use_head, cluster_shape):
         Perform Upper Triangular Matrix 
         Perform Matrix Multiplication
     """ 
-    directtsqr_invuppertri(app, A, expected_inverse)
+    # directtsqr_invuppertri(app, A, expected_inverse)
 
 
 if __name__ == "__main__":

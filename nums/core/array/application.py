@@ -982,7 +982,7 @@ class ArrayApplication(object):
         nonsquare_block = X.block_shape[0] != X.block_shape[1]
 
         if single_block or nonsquare_block:
-            X = X.reshape(block_shape=(2,2))
+            X = X.reshape(block_shape=(16, 16))
 
         # Setup metadata
         full_shape = X.shape

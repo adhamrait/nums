@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -N 2
+#SBATCH -N 3
 #SBATCH -C knl
 #SBATCH -p debug
 #SBATCH -t 00:30:00
@@ -48,4 +48,4 @@ done
 
 export MKL_NUM_THREADS=1
 echo $(which python)
-python -u ./test_nums.py --address $ip_head --cluster-shape 1,1
+python -u ./test_nums.py --address $ip_head --cluster-shape 2,1
