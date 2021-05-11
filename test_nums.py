@@ -28,30 +28,47 @@ def baseline_1(app: ArrayApplication, A: BlockArray, expected_inverse: BlockArra
     print("Starting baseline QR factorization -> R naive inverse -> matrix mult [1]")
     start = time.time()
 
+    print("here")
     Q, R = app.qr(A)
+    qr_end = time.time()
+    print("R block size:")
 
     R_inv = app.inv(R)
+    inv_end = time.time()
+    print("R_inv block size:")
 
     inverse = R_inv @ R_inv.T
+    mult_end = time.time()
+    print("end")
 
+    _ = inverse.get()
     end = time.time()
-    print("Experiment took", end - start, "seconds")
-    print("Is it correct?", bool(app.allclose(inverse, expected_inverse)))
+
+
+    print("Statistics:\nQR: {}s\nInverse: {}s\nMultiplication: {}s\nFetch: {}s\nTotal: {}s".format(
+        qr_end-start, inv_end-qr_end, mult_end-inv_end, end-mult_end, end-start
+    ))
+    if expected_inverse is not None:
+        print("Is it correct?", bool(app.allclose(inverse, expected_inverse)))
 
 def baseline_0(app, A):
     print("Starting baseline matrix mult -> inverse [0]")
     start = time.time()
     
     ATA = A.T @ A
+    mult_end = time.time()
     expected_inverse = app.inv(ATA)
+    inv_end = time.time()
     _ = expected_inverse.get()
-
     end = time.time()
-    print("Experiment took", end - start, "seconds\n")
+
+    print("Statistics:\nMultiplication: {}s\nInverse: {}s\nFetch: {}s\nTotal: {}s".format(
+        mult_end-start, inv_end-mult_end, end-inv_end, end-start
+    ))
 
     return expected_inverse
 
-def main(address, work_dir, use_head, cluster_shape):
+def main(address, work_dir, use_head, cluster_shape, features, block_size):
     settings.use_head = use_head
     settings.cluster_shape = tuple(map(lambda x: int(x), cluster_shape.split(",")))
     print("use_head", use_head)
@@ -63,14 +80,16 @@ def main(address, work_dir, use_head, cluster_shape):
 
     print("running nums operation")
 
-    b = 10
-    m = 100
-    n = 10
+    cols = features
+    rows = features * 1024
+    b = block_size
+
+    print("Beginning experiment with {} Cluster Shape, {} Features, and {} Block Size".format(cluster_shape, cols, b))
 
     app: ArrayApplication = instance()
     system: System = app.system
 
-    A: BlockArray = app.random.random(shape=(m,n), block_shape=(b,b))
+    A: BlockArray = app.random.random(shape=(rows, cols), block_shape=(b, b))
     print("Generated TS matrix A with shape", A.shape, "and block shape", A.block_shape)
     
     """
@@ -79,7 +98,7 @@ def main(address, work_dir, use_head, cluster_shape):
         Perform Matrix Multiplication: A.T @ A
         Perform Inversion: (ATA)^-1
     """
-    expected_inverse = baseline_0(app, A)
+    # expected_inverse = baseline_0(app, A)
 
     """
         Second Baseline Experiment:
@@ -88,7 +107,7 @@ def main(address, work_dir, use_head, cluster_shape):
         Perform Naive Inversion of R 
         Perform Matrix Multiplication: R_inv @ R_inv.T
     """
-    baseline_1(app, A, expected_inverse)
+    baseline_1(app, A, None)
 
     """
         Main Experiment:
@@ -98,6 +117,7 @@ def main(address, work_dir, use_head, cluster_shape):
         Perform Matrix Multiplication
     """ 
     # directtsqr_invuppertri(app, A, expected_inverse)
+    print("finished")
 
 
 if __name__ == "__main__":
@@ -106,6 +126,8 @@ if __name__ == "__main__":
     parser.add_argument('--work-dir', default="/global/homes/j/jiwania/nums/outputs")
     parser.add_argument('--use-head', action="store_true", help="")
     parser.add_argument('--cluster-shape', default="1,1")
+    parser.add_argument('--features', type=int, default=128)
+    parser.add_argument('--block-size', type=int, default=128)
     args = parser.parse_args()
     kwargs = vars(args)
     main(**kwargs)

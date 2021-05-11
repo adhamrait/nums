@@ -1,14 +1,17 @@
 #!/bin/bash -l
-#SBATCH -N 3
+#SBATCH -N 2
 #SBATCH -C knl
-#SBATCH -p debug
+#SBATCH -p regular
 #SBATCH -t 00:30:00
-#SBATCH -J job-ray
-#SBATCH -o outputs/job-ray.o%j
-#SBATCH -e outputs/job-ray.e%j
+#SBATCH -J      base1-1-2048-12288
+#SBATCH -o outputs/b1-1-2048-12288.o%j
+#SBATCH -e outputs/errors.e%j
 
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=68
+
+ft=2048
+bs=12288
 
 source activate nums
 
@@ -48,4 +51,4 @@ done
 
 export MKL_NUM_THREADS=1
 echo $(which python)
-python -u ./test_nums.py --address $ip_head --cluster-shape 2,1
+python -u ./test_nums.py --address $ip_head --cluster-shape 1,1 --features "$ft" --block-size "$bs"
