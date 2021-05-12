@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+import time
 from typing import List
 
 import numpy as np
@@ -1013,6 +1013,10 @@ class ArrayApplication(object):
                     syskwargs=syskwargs)
         return ret
 
+    block_lu = 0
+    mat_mul = 0
+    mat_creation = 0
+
     def lu_block_decompose(self, X: BlockArray):
         grid = X.grid.copy()
         # P: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
@@ -1022,8 +1026,10 @@ class ArrayApplication(object):
         if len(X.blocks) == 1:
             # Only one block, perform single-block lu decomp
             X_block: Block = X.blocks[0, 0]
+            start_small = time.time()
             P.blocks[0, 0].oid, L.blocks[0, 0].oid, U.blocks[0, 0].oid = self.system.lu_inv(X.blocks[0, 0].oid,
                 syskwargs={"grid_entry": X_block.grid_entry, "grid_shape": X_block.grid_shape})
+            self.block_lu += time.time() - start_small
         else:
             # Must do blocked LU decomp
             size = X.blocks.shape[0]//2
@@ -1034,14 +1040,17 @@ class ArrayApplication(object):
             M2 = BlockArray.from_blocks(X.blocks[:size, size:], subshape, self.system)
             M3 = BlockArray.from_blocks(X.blocks[size:, :size], subshape, self.system)
             M4 = BlockArray.from_blocks(X.blocks[size:, size:], subshape, self.system)
-
+            
+            start_matmul = time.time()
             P1, L1, U1 = self.lu_block_decompose(M1)
             T = U1 @ L1
             Shat = M3 @ T
             Mhat = M4 - Shat @ (P1 @ M2)
             P2, L3, U3 = self.lu_block_decompose(Mhat)
             S = P2 @ Shat
+            self.mat_mul += time.time() - start_matmul
 
+            mat_gen = time.time()
             L.blocks[:size, :size] = L1.blocks
             L.blocks[size:, :size] = (-L3 @ S).blocks
             L.blocks[size:, size:] = L3.blocks
@@ -1080,11 +1089,13 @@ class ArrayApplication(object):
                         block.grid_entry,
                         grid.to_meta(),
                         syskwargs=syskwargs)
+            self.mat_creation += time.time() - mat_gen
         return P, L, U
 
     def lu_inv(self, X: BlockArray):
         assert (X.shape[0] == X.shape[1])   
         P, L, U = self.lu_block_decompose(X)
+        print(self.mat_mul, self.mat_creation, self.block_lu)
         return U @ L @ P
 
     def inv(self, X: BlockArray):
