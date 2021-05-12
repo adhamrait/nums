@@ -1,0 +1,1369 @@
+2021-05-12 05:04:30,693	INFO services.py:1092 -- View the Ray dashboard at [1m[32mhttp://127.0.0.1:8265[39m[22m
+2021-05-12 05:04:49,650	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8338, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 512. GiB for an array with shape (262144, 262144) and data type float64
+2021-05-12 05:04:50,651	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8343, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 512. GiB for an array with shape (262144, 262144) and data type float64
+2021-05-12 05:04:51,652	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8296, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 512. GiB for an array with shape (262144, 262144) and data type float64
+2021-05-12 05:04:52,652	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8343, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 512. GiB for an array with shape (262144, 262144) and data type float64
+2021-05-12 05:04:53,653	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8296, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 512. GiB for an array with shape (262144, 262144) and data type float64
+[2m[36m(pid=8286)[0m E0512 05:05:07.131162  8286  8286 plasma_store_provider.cc:113] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8286)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:07.130890  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8286)[0m E0512 05:05:08.131891  8286  8286 plasma_store_provider.cc:113] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8286)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:08.131620  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8286)[0m E0512 05:05:10.842633  8286  8286 plasma_store_provider.cc:113] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8286)[0m Waiting 4000ms for space to free up...
+E0512 05:05:15.644765  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=041697ac73dae98affffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[33m(pid=raylet)[0m E0512 05:05:10.497135  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:14.934620  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8286)[0m E0512 05:05:14.936699  8286  8286 plasma_store_provider.cc:113] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8286)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:15.716392  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:15.718366  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:15.718454  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+2021-05-12 05:05:15,872	WARNING worker.py:1091 -- A worker died or was killed while executing task 041697ac73dae98affffffff01000000.
+[2m[36m(pid=8291)[0m E0512 05:05:15.850492  8291  8291 plasma_store_provider.cc:113] Failed to put object 645ecf4c559db7b2ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8291)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:15.850262  8191  8208 store.cc:256] Not enough memory to create the object 645ecf4c559db7b2ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8399)[0m E0512 05:05:16.136651  8399  8399 plasma_store_provider.cc:113] Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8399)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:16.136420  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8399)[0m E0512 05:05:17.138106  8399  8399 plasma_store_provider.cc:113] Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8399)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:17.138027  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:18.181538  8191  8208 store.cc:256] Not enough memory to create the object f3526d52ce527887ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8340)[0m E0512 05:05:18.181644  8340  8340 plasma_store_provider.cc:113] Failed to put object f3526d52ce527887ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8340)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:18.429272  8191  8208 store.cc:256] Not enough memory to create the object a6a2275a90c9275cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8284)[0m E0512 05:05:18.430218  8284  8284 plasma_store_provider.cc:113] Failed to put object a6a2275a90c9275cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8284)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8296)[0m E0512 05:05:18.791909  8296  8296 plasma_store_provider.cc:113] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:18.791229  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:18.873898  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:05:19.114620  8301  8301 plasma_store_provider.cc:113] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8301)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:19.114416  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8399)[0m E0512 05:05:19.138643  8399  8399 plasma_store_provider.cc:113] Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8399)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:19.138551  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:19.182564  8191  8208 store.cc:256] Not enough memory to create the object f3526d52ce527887ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8340)[0m E0512 05:05:19.182654  8340  8340 plasma_store_provider.cc:113] Failed to put object f3526d52ce527887ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8340)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8301)[0m E0512 05:05:20.226624  8301  8301 plasma_store_provider.cc:113] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8301)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8296)[0m E0512 05:05:19.815125  8296  8296 plasma_store_provider.cc:113] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:19.812602  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:20.202373  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8284)[0m E0512 05:05:20.879781  8284  8284 plasma_store_provider.cc:113] Failed to put object a6a2275a90c9275cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8284)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:20.876916  8191  8208 store.cc:256] Not enough memory to create the object a6a2275a90c9275cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:05:21,158	WARNING worker.py:1091 -- A worker died or was killed while executing task 3889f909b8acd480ffffffff01000000.
+E0512 05:05:21.171598  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=3889f909b8acd480ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[36m(pid=8340)[0m E0512 05:05:21.183305  8340  8340 plasma_store_provider.cc:113] Failed to put object f3526d52ce527887ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8340)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:21.183158  8191  8208 store.cc:256] Not enough memory to create the object f3526d52ce527887ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:21.643724  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644064  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644110  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644147  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644222  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644279  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644389  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644441  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644501  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644551  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644606  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644676  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:21.644737  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[36m(pid=8296)[0m E0512 05:05:21.820140  8296  8296 plasma_store_provider.cc:113] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:21.819491  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8276)[0m E0512 05:05:22.059832  8276  8276 plasma_store_provider.cc:113] Failed to put object ff72e6be05908a0affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8276)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:22.059710  8191  8208 store.cc:256] Not enough memory to create the object ff72e6be05908a0affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8301)[0m E0512 05:05:22.237473  8301  8301 plasma_store_provider.cc:113] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8301)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:22.237339  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:22.507936  8191  8208 store.cc:256] Not enough memory to create the object 28f4dfa874e1c60dffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8339)[0m E0512 05:05:22.508615  8339  8339 plasma_store_provider.cc:113] Failed to put object 28f4dfa874e1c60dffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8339)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8284)[0m E0512 05:05:22.881798  8284  8284 plasma_store_provider.cc:113] Failed to put object a6a2275a90c9275cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8284)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:22.881690  8191  8208 store.cc:256] Not enough memory to create the object a6a2275a90c9275cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8276)[0m E0512 05:05:23.060817  8276  8276 plasma_store_provider.cc:113] Failed to put object ff72e6be05908a0affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8276)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:23.060721  8191  8208 store.cc:256] Not enough memory to create the object ff72e6be05908a0affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8399)[0m E0512 05:05:23.139353  8399  8399 plasma_store_provider.cc:113] Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8399)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:23.139230  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:23.509670  8191  8208 store.cc:256] Not enough memory to create the object 28f4dfa874e1c60dffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:24.230028  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8340)[0m E0512 05:05:25.185654  8340  8340 plasma_store_provider.cc:113] Failed to put object f3526d52ce527887ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8340)[0m Waiting 8000ms for space to free up...
+2021-05-12 05:05:25,919	WARNING worker.py:1091 -- A worker died or was killed while executing task ff22d3fc28df7ce1ffffffff01000000.
+[2m[36m(pid=8296)[0m E0512 05:05:25.820896  8296  8296 plasma_store_provider.cc:113] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8339)[0m E0512 05:05:23.509788  8339  8339 plasma_store_provider.cc:113] Failed to put object 28f4dfa874e1c60dffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8339)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8339)[0m E0512 05:05:25.510839  8339  8339 plasma_store_provider.cc:113] Failed to put object 28f4dfa874e1c60dffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8339)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8286)[0m E0512 05:05:24.237110  8286  8286 plasma_store_provider.cc:113] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8286)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8276)[0m E0512 05:05:25.078299  8276  8276 plasma_store_provider.cc:113] Failed to put object ff72e6be05908a0affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8276)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8382)[0m E0512 05:05:25.296558  8382  8382 plasma_store_provider.cc:113] Failed to put object db5944eaff620b80ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8382)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:25.077596  8191  8208 store.cc:256] Not enough memory to create the object ff72e6be05908a0affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:25.185474  8191  8208 store.cc:256] Not enough memory to create the object f3526d52ce527887ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:25.296414  8191  8208 store.cc:256] Not enough memory to create the object db5944eaff620b80ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:25.510648  8191  8208 store.cc:256] Not enough memory to create the object 28f4dfa874e1c60dffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:25.743029  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.746803  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 2: HandleServiceClosed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.800041  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.804311  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.805521  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.814963  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.820730  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:25.836170  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.840699  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.851534  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:25.862695  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.862815  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.862941  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.862972  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863001  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863023  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863075  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863097  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863119  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863137  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863159  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863184  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863219  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863260  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863286  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863303  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863320  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863334  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863348  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863394  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863423  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863440  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.863461  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:25.869825  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+[2m[33m(pid=raylet)[0m E0512 05:05:25.869886  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+[2m[33m(pid=raylet)[0m E0512 05:05:25.878342  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+[2m[33m(pid=raylet)[0m E0512 05:05:25.878391  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+[2m[33m(pid=raylet)[0m E0512 05:05:25.994879  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:26.000910  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+E0512 05:05:26.075537  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=ff22d3fc28df7ce1ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[33m(pid=raylet)[0m E0512 05:05:26.019701  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:26.021421  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:26.026091  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:26.030627  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:26.048538  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:05:26.238441  8301  8301 plasma_store_provider.cc:113] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8301)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:26.238276  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8382)[0m E0512 05:05:26.298609  8382  8382 plasma_store_provider.cc:113] Failed to put object db5944eaff620b80ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8382)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:26.298491  8191  8208 store.cc:256] Not enough memory to create the object db5944eaff620b80ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8290)[0m E0512 05:05:26.722075  8290  8290 plasma_store_provider.cc:113] Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8290)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:26.718933  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8284)[0m E0512 05:05:26.882753  8284  8284 plasma_store_provider.cc:113] Failed to put object a6a2275a90c9275cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8284)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:26.882656  8191  8208 store.cc:256] Not enough memory to create the object a6a2275a90c9275cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8299)[0m E0512 05:05:27.035286  8299  8299 plasma_store_provider.cc:113] Failed to put object f77fd32d1df04fe8ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8299)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:27.027544  8191  8208 store.cc:256] Not enough memory to create the object f77fd32d1df04fe8ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+E0512 05:05:28.652211  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=d0bb5141a2b1d46fffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[33m(pid=raylet)[0m E0512 05:05:28.541712  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8290)[0m E0512 05:05:28.545039  8290  8290 plasma_store_provider.cc:113] Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8290)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8276)[0m E0512 05:05:29.080559  8276  8276 plasma_store_provider.cc:113] Failed to put object ff72e6be05908a0affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8276)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8299)[0m E0512 05:05:28.653081  8299  8299 plasma_store_provider.cc:113] Failed to put object f77fd32d1df04fe8ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8299)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8382)[0m E0512 05:05:28.979118  8382  8382 plasma_store_provider.cc:113] Failed to put object db5944eaff620b80ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8382)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:28.652420  8191  8208 store.cc:256] Not enough memory to create the object f77fd32d1df04fe8ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:28.889928  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:28.925927  8191  8208 store.cc:256] Not enough memory to create the object db5944eaff620b80ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:29.080372  8191  8208 store.cc:256] Not enough memory to create the object ff72e6be05908a0affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145136  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145210  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145267  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145314  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145407  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145539  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145597  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145653  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145709  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145772  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145818  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.145867  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146039  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146083  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146140  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146180  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146220  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146262  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146450  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146503  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146543  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146597  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146662  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146697  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146746  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146860  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:29.146908  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+2021-05-12 05:05:29,406	WARNING worker.py:1091 -- A worker died or was killed while executing task d0bb5141a2b1d46fffffffff01000000.
+[2m[36m(pid=8290)[0m E0512 05:05:30.548159  8290  8290 plasma_store_provider.cc:113] Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8290)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:30.547910  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8299)[0m E0512 05:05:30.654158  8299  8299 plasma_store_provider.cc:113] Failed to put object f77fd32d1df04fe8ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8299)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:30.654034  8191  8208 store.cc:256] Not enough memory to create the object f77fd32d1df04fe8ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8399)[0m E0512 05:05:31.140426  8399  8399 plasma_store_provider.cc:113] Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8399)[0m Waiting 16000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:31.140267  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8285)[0m E0512 05:05:32.141185  8285  8285 plasma_store_provider.cc:113] Failed to put object d389b09f14738697ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8285)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:32.141054  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:32.150810  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8273)[0m E0512 05:05:32.150924  8273  8273 plasma_store_provider.cc:113] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:32.340054  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:05:32.340627 12217 12217 plasma_store_provider.cc:113] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:32.914036  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8280)[0m E0512 05:05:32.914202  8280  8280 plasma_store_provider.cc:113] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8280)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8408)[0m E0512 05:05:33.055063  8408  8408 plasma_store_provider.cc:113] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8408)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:33.054980  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:33.142659  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:33.151917  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8273)[0m E0512 05:05:33.152081  8273  8273 plasma_store_provider.cc:113] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8285)[0m E0512 05:05:33.143038  8285  8285 plasma_store_provider.cc:113] Failed to put object d389b09f14738697ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8285)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:33.341527  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:05:33.341637 12217 12217 plasma_store_provider.cc:113] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8385)[0m E0512 05:05:33.576800  8385  8385 plasma_store_provider.cc:113] Failed to put object e1932fb73ce3bf25ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8385)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:33.576689  8191  8208 store.cc:256] Not enough memory to create the object e1932fb73ce3bf25ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8296)[0m E0512 05:05:33.822126  8296  8296 plasma_store_provider.cc:113] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 16000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:33.821882  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8280)[0m E0512 05:05:33.915191  8280  8280 plasma_store_provider.cc:113] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8280)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:33.915084  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:05:40,351	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8362, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 2.00 TiB for an array with shape (524288, 524288) and data type float64
+2021-05-12 05:05:40,397	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8287, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 2.00 TiB for an array with shape (524288, 524288) and data type float64
+2021-05-12 05:05:40,398	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8385, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 2.00 TiB for an array with shape (524288, 524288) and data type float64
+2021-05-12 05:05:40,398	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8285, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 2.00 TiB for an array with shape (524288, 524288) and data type float64
+2021-05-12 05:05:40,398	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8270, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 482, in ray._raylet.execute_task
+  File "/home/ubuntu/nums/nums/core/systems/utils.py", line 46, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/nums/nums/core/systems/numpy_compute.py", line 237, in bop
+    return np.tensordot(a1, a2, axes=axes)
+  File "<__array_function__ internals>", line 6, in tensordot
+  File "/home/ubuntu/miniconda3/envs/nums/lib/python3.7/site-packages/numpy/core/numeric.py", line 1138, in tensordot
+    res = dot(at, bt)
+  File "<__array_function__ internals>", line 6, in dot
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 2.00 TiB for an array with shape (524288, 524288) and data type float64
+[2m[36m(pid=8273)[0m E0512 05:05:38.335201  8273  8273 plasma_store_provider.cc:113] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8385)[0m E0512 05:05:41.007021  8385  8385 plasma_store_provider.cc:113] Failed to put object e1932fb73ce3bf25ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8385)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8408)[0m E0512 05:05:34.056469  8408  8408 plasma_store_provider.cc:113] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8408)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8408)[0m E0512 05:05:38.336891  8408  8408 plasma_store_provider.cc:113] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8408)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8301)[0m E0512 05:05:41.012765  8301  8301 plasma_store_provider.cc:113] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8301)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8288)[0m E0512 05:05:41.150379  8288  8288 plasma_store_provider.cc:113] Failed to put object b0b63665d2a7f796ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8288)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8285)[0m E0512 05:05:38.333550  8285  8285 plasma_store_provider.cc:113] Failed to put object d389b09f14738697ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8285)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8290)[0m E0512 05:05:39.619261  8290  8290 plasma_store_provider.cc:113] Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8290)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8278)[0m E0512 05:05:41.818554  8278  8278 plasma_store_provider.cc:113] Failed to put object 31578848786ae4f0ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8278)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8286)[0m E0512 05:05:41.009583  8286  8286 plasma_store_provider.cc:123] Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8286)[0m num clients with quota: 0
+[2m[36m(pid=8286)[0m quota map size: 02021-05-12 05:05:42,014	WARNING worker.py:1091 -- A worker died or was killed while executing task 93df71baff88c4c8ffffffff01000000.
+
+[2m[36m(pid=8286)[0m pinned quota map size: 0
+[2m[36m(pid=8286)[0m allocated bytes: 158800567664
+[2m[36m(pid=8286)[0m allocation limit: 160131514368
+[2m[36m(pid=8286)[0m pinned bytes: 171685471082
+[2m[36m(pid=8286)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8286)[0m (global lru) used: 0%
+[2m[36m(pid=8286)[0m (global lru) num objects: 0
+[2m[36m(pid=8286)[0m (global lru) num evictions: 28
+[2m[36m(pid=8286)[0m (global lru) bytes evicted: 17783856005
+[2m[36m(pid=8286)[0m ---
+[2m[36m(pid=8286)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8286)[0m ---
+[2m[36m(pid=8280)[0m E0512 05:05:38.336630  8280  8280 plasma_store_provider.cc:113] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8280)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8299)[0m E0512 05:05:38.340849  8299  8299 plasma_store_provider.cc:113] Failed to put object f77fd32d1df04fe8ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8299)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:34.056304  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.294834  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.324385  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.324457  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.324496  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.336181  8191  8208 store.cc:256] Not enough memory to create the object f77fd32d1df04fe8ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:38.378551  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:39.614434  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:40.753813  8191  8208 store.cc:256] Not enough memory to create the object e1932fb73ce3bf25ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:41.004310  8191  8208 store.cc:256] Not enough memory to create the object 9ae2aea4ecbc163fffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:41.005182  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:41.142086  8191  8208 store.cc:256] Not enough memory to create the object b0b63665d2a7f796ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:41.818284  8191  8208 store.cc:256] Not enough memory to create the object 31578848786ae4f0ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:05:38.384497 12217 12217 plasma_store_provider.cc:113] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8289)[0m E0512 05:05:41.897454  8289  8289 plasma_store_provider.cc:113] Failed to put object 7c526e8b34f20c79ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8289)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:41.897012  8191  8208 store.cc:256] Not enough memory to create the object 7c526e8b34f20c79ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969099  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969205  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969226  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969241  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969256  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969274  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969318  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969334  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969352  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969372  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969391  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969408  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969430  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969468  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969518  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969542  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969560  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969601  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969625  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969662  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969679  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969693  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969712  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969789  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+E0512 05:05:42.120009  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {CPU: 1, node:172.31.46.9: 0.0001, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=93df71baff88c4c8ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969821  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969841  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969898  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969916  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.969949  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970038  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970058  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970089  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970118  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970139  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970166  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970211  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970234  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970252  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970270  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970288  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970309  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970326  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970345  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:41.970361  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[36m(pid=8340)[0m E0512 05:05:42.203517  8340  8340 plasma_store_provider.cc:113] Failed to put object 977983e8064d9acaffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8340)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8288)[0m E0512 05:05:42.177628  8288  8288 plasma_store_provider.cc:113] Failed to put object b0b63665d2a7f796ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8288)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.177461  8191  8208 store.cc:256] Not enough memory to create the object b0b63665d2a7f796ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:42.203429  8191  8208 store.cc:256] Not enough memory to create the object 977983e8064d9acaffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8408)[0m E0512 05:05:42.340919  8408  8408 plasma_store_provider.cc:113] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8408)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8285)[0m E0512 05:05:42.339377  8285  8285 plasma_store_provider.cc:113] Failed to put object d389b09f14738697ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8285)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8280)[0m E0512 05:05:42.346230  8280  8280 plasma_store_provider.cc:113] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8280)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.339241  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:42.340797  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:42.346104  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:42.346159  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8273)[0m E0512 05:05:42.346518  8273  8273 plasma_store_provider.cc:113] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.390596  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:05:42.390730 12217 12217 plasma_store_provider.cc:113] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8382)[0m E0512 05:05:42.660300  8382  8382 plasma_store_provider.cc:113] Failed to put object 9901b2eb9de52586ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8382)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.660184  8191  8208 store.cc:256] Not enough memory to create the object 9901b2eb9de52586ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8343)[0m E0512 05:05:42.781569  8343  8343 plasma_store_provider.cc:113] Failed to put object e540e1afb40e3e10ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8343)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8278)[0m E0512 05:05:42.820427  8278  8278 plasma_store_provider.cc:113] Failed to put object 31578848786ae4f0ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8278)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.781323  8191  8208 store.cc:256] Not enough memory to create the object e540e1afb40e3e10ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:42.820293  8191  8208 store.cc:256] Not enough memory to create the object 31578848786ae4f0ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8289)[0m E0512 05:05:42.899188  8289  8289 plasma_store_provider.cc:113] Failed to put object 7c526e8b34f20c79ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8289)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:42.898871  8191  8208 store.cc:256] Not enough memory to create the object 7c526e8b34f20c79ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8385)[0m E0512 05:05:43.022593  8385  8385 plasma_store_provider.cc:113] Failed to put object e1932fb73ce3bf25ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8385)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:43.022501  8191  8208 store.cc:256] Not enough memory to create the object e1932fb73ce3bf25ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:05:47,496	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::empty()[39m (pid=8286, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object 9ae2aea4ecbc163fffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8343)[0m E0512 05:05:47.438612  8343  8343 plasma_store_provider.cc:113] Failed to put object e540e1afb40e3e10ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8343)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8289)[0m E0512 05:05:46.762558  8289  8289 plasma_store_provider.cc:113] Failed to put object 7c526e8b34f20c79ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8289)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8290)[0m E0512 05:05:47.622469  8290  8290 plasma_store_provider.cc:113] Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+[2m[36m(pid=8290)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8278)[0m E0512 05:05:46.983716  8278  8278 plasma_store_provider.cc:113] Failed to put object 31578848786ae4f0ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8278)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8399)[0m E0512 05:05:47.438285  8399  8399 plasma_store_provider.cc:123] Failed to put object 2076d64d47076d54ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8399)[0m num clients with quota: 0
+[2m[36m(pid=8399)[0m quota map size: 0
+[2m[36m(pid=8399)[0m pinned quota map size: 0
+[2m[36m(pid=8399)[0m allocated bytes: 158829927278
+[2m[36m(pid=8399)[0m allocation limit: 160131514368
+[2m[36m(pid=8399)[0m pinned bytes: 176009798502
+[2m[36m(pid=8399)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8399)[0m (global lru) used: 0%
+[2m[36m(pid=8399)[0m (global lru) num objects: 0
+[2m[36m(pid=8399)[0m (global lru) num evictions: 34
+[2m[36m(pid=8399)[0m (global lru) bytes evicted: 28525470074
+[2m[36m(pid=8399)[0m ---
+[2m[36m(pid=8399)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8399)[0m ---
+[2m[33m(pid=raylet)[0m E0512 05:05:46.645628  8191  8208 store.cc:256] Not enough memory to create the object 7c526e8b34f20c79ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:46.968236  8191  8208 store.cc:256] Not enough memory to create the object 31578848786ae4f0ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.026242  8191  8208 store.cc:256] Not enough memory to create the object e1932fb73ce3bf25ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.154558  8191  8208 store.cc:256] Not enough memory to create the object 2076d64d47076d54ffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.415730  8191  8208 store.cc:256] Not enough memory to create the object e540e1afb40e3e10ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.622196  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.665832  8191  8208 store.cc:256] Not enough memory to create the object 977983e8064d9acaffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8340)[0m E0512 05:05:47.666162  8340  8340 plasma_store_provider.cc:113] Failed to put object 977983e8064d9acaffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8340)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8385)[0m E0512 05:05:47.030144  8385  8385 plasma_store_provider.cc:113] Failed to put object e1932fb73ce3bf25ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8385)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8382)[0m E0512 05:05:47.794142  8382  8382 plasma_store_provider.cc:113] Failed to put object 9901b2eb9de52586ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8382)[0m Waiting 2000ms for space to free up...
+E0512 05:05:47.899300  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=90e2cc402c650603ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[33m(pid=raylet)[0m E0512 05:05:47.786834  8191  8208 store.cc:256] Not enough memory to create the object 9901b2eb9de52586ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:47.887789  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.887987  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888022  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888051  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888072  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888093  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888152  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888173  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+2021-05-12 05:05:47,904	WARNING worker.py:1091 -- A worker died or was killed while executing task 90e2cc402c650603ffffffff01000000.
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888717  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888825  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888857  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888891  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.888934  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889123  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889156  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889194  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889237  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889256  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889282  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889433  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889451  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889482  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889499  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889530  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889561  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889591  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889681  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889711  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889760  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889837  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889885  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889909  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889955  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.889981  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890022  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890103  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890122  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890143  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890161  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890182  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890247  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890276  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890295  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890321  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890352  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890375  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890398  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890477  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890517  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:47.890543  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:48.383417  8191  8208 store.cc:256] Not enough memory to create the object 70e9acfb54984970ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=14002)[0m E0512 05:05:48.383538 14002 14002 plasma_store_provider.cc:113] Failed to put object 70e9acfb54984970ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=14002)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:49.845466  8191  8208 store.cc:256] Not enough memory to create the object 9901b2eb9de52586ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8296)[0m E0512 05:05:51.241384  8296  8296 plasma_store_provider.cc:123] Failed to put object 0dd1310ca489e197ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8296)[0m num clients with quota: 0
+[2m[36m(pid=8296)[0m quota map size: 0
+[2m[36m(pid=8296)[0m pinned quota map size: 0
+[2m[36m(pid=8296)[0m allocated bytes: 152387474056
+[2m[36m(pid=8296)[0m allocation limit: 160131514368
+[2m[36m(pid=8296)[0m pinned bytes: 169567345280
+[2m[36m(pid=8296)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8296)[0m (global lru) used: 0%
+[2m[36m(pid=8296)[0m (global lru) num objects: 0
+[2m[36m(pid=8296)[0m (global lru) num evictions: 39
+[2m[36m(pid=8296)[0m (global lru) bytes evicted: 32820438637
+[2m[36m(pid=8296)[0m ---
+[2m[36m(pid=8296)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8296)[0m ---
+[2m[36m(pid=8285)[0m E0512 05:05:51.234624  8285  8285 plasma_store_provider.cc:113] Failed to put object d389b09f14738697ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8285)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8278)[0m E0512 05:05:51.235816  8278  8278 plasma_store_provider.cc:113] Failed to put object 31578848786ae4f0ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8278)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=14002)[0m E0512 05:05:51.235023 14002 14002 plasma_store_provider.cc:113] Failed to put object 70e9acfb54984970ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=14002)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8280)[0m E0512 05:05:51.237099  8280  8280 plasma_store_provider.cc:113] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8280)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8382)[0m E0512 05:05:51.233263  8382  8382 plasma_store_provider.cc:113] Failed to put object 9901b2eb9de52586ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8382)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:51.233827  8191  8208 store.cc:256] Not enough memory to create the object 0dd1310ca489e197ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234302  8191  8208 store.cc:256] Not enough memory to create the object 977983e8064d9acaffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234346  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234403  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234449  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234490  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234561  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234606  8191  8208 store.cc:256] Not enough memory to create the object 70e9acfb54984970ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234654  8191  8208 store.cc:256] Not enough memory to create the object 7c526e8b34f20c79ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234699  8191  8208 store.cc:256] Not enough memory to create the object 31578848786ae4f0ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:51.234748  8191  8208 store.cc:256] Not enough memory to create the object e540e1afb40e3e10ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:05:51.238837 12217 12217 plasma_store_provider.cc:113] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8340)[0m E0512 05:05:51.246160  8340  8340 plasma_store_provider.cc:113] Failed to put object 977983e8064d9acaffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8340)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8273)[0m E0512 05:05:51.234956  8273  8273 plasma_store_provider.cc:113] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8408)[0m E0512 05:05:51.238590  8408  8408 plasma_store_provider.cc:113] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8408)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8343)[0m E0512 05:05:51.238165  8343  8343 plasma_store_provider.cc:113] Failed to put object e540e1afb40e3e10ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8343)[0m Waiting 4000ms for space to free up...
+[2m[36m(pid=8289)[0m E0512 05:05:51.237506  8289  8289 plasma_store_provider.cc:113] Failed to put object 7c526e8b34f20c79ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8289)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:51.562266  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+[2m[33m(pid=raylet)[0m E0512 05:05:51.562355  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Cancelling all calls
+E0512 05:05:51.651207  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=fada60185becddc1ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[36m(pid=8296)[0m E0512 05:05:51.655596  8296  8296 plasma_store_provider.cc:113] Failed to put object 3bf25fe3c4243683ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:51.627081  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Socket closed
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639142  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639490  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639521  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639549  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639600  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639622  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639703  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639745  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639809  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639837  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639855  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639873  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639895  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639961  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.639988  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640012  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640039  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640059  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640080  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640128  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640149  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640170  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640194  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640214  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640235  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640255  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640308  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640331  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640347  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640375  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640391  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640414  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640431  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640447  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640468  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640502  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640516  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640529  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640550  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640566  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640583  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640599  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640616  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640632  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640647  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640667  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640688  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640730  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640751  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640772  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640794  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640813  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640861  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.640883  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:51.655454  8191  8208 store.cc:256] Not enough memory to create the object 3bf25fe3c4243683ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:05:51,701	WARNING worker.py:1091 -- A worker died or was killed while executing task fada60185becddc1ffffffff01000000.
+2021-05-12 05:05:54,126	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::empty()[39m (pid=8399, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object 2076d64d47076d54ffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8385)[0m E0512 05:05:56.383723  8385  8385 plasma_store_provider.cc:113] Failed to put object e1932fb73ce3bf25ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8385)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8343)[0m E0512 05:05:56.383811  8343  8343 plasma_store_provider.cc:113] Failed to put object e540e1afb40e3e10ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8343)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8296)[0m E0512 05:05:56.385231  8296  8296 plasma_store_provider.cc:113] Failed to put object 3bf25fe3c4243683ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 2000ms for space to free up...
+E0512 05:05:56.528968  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=e7c742a51495e9a5ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+2021-05-12 05:05:56,532	WARNING worker.py:1091 -- A worker died or was killed while executing task e7c742a51495e9a5ffffffff01000000.
+[2m[36m(pid=8382)[0m E0512 05:05:56.384307  8382  8382 plasma_store_provider.cc:113] Failed to put object 9901b2eb9de52586ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8382)[0m Waiting 8000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:05:56.382956  8191  8208 store.cc:256] Not enough memory to create the object e1932fb73ce3bf25ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:56.383224  8191  8208 store.cc:256] Not enough memory to create the object 9901b2eb9de52586ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:56.383265  8191  8208 store.cc:256] Not enough memory to create the object e540e1afb40e3e10ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:56.383317  8191  8208 store.cc:256] Not enough memory to create the object 977983e8064d9acaffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:56.385006  8191  8208 store.cc:256] Not enough memory to create the object 3bf25fe3c4243683ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463587  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463717  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463732  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463747  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463778  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463795  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463893  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463909  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463924  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463937  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463954  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463968  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.463980  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464013  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464027  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464043  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464056  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464072  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464098  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464223  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464251  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464264  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464277  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464308  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464723  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464751  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464799  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464815  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464830  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464870  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464886  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464900  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464915  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464929  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464944  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464984  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.464998  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465013  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465034  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465054  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465067  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465081  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465095  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465108  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465122  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465137  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465157  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465194  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465209  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465224  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465241  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465255  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465297  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465312  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465323  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:05:56.465353  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[36m(pid=8340)[0m E0512 05:05:56.384421  8340  8340 plasma_store_provider.cc:113] Failed to put object 977983e8064d9acaffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8340)[0m Waiting 8000ms for space to free up...
+[2m[36m(pid=8301)[0m E0512 05:05:57.021675  8301  8301 plasma_store_provider.cc:123] Failed to put object d6ea23aa98845d5cffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8301)[0m num clients with quota: 0
+[2m[36m(pid=8301)[0m quota map size: 0
+[2m[36m(pid=8301)[0m pinned quota map size: 0
+[2m[36m(pid=8301)[0m allocated bytes: 158829924245
+[2m[36m(pid=8301)[0m allocation limit: 160131514368
+[2m[36m(pid=8301)[0m pinned bytes: 176009795469
+[2m[36m(pid=8301)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8301)[0m (global lru) used: 0%
+[2m[36m(pid=8301)[0m (global lru) num objects: 0
+[2m[36m(pid=8301)[0m (global lru) num evictions: 39
+[2m[36m(pid=8301)[0m (global lru) bytes evicted: 32820438637
+[2m[36m(pid=8301)[0m ---
+[2m[36m(pid=8301)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8301)[0m ---
+[2m[33m(pid=raylet)[0m E0512 05:05:57.021399  8191  8208 store.cc:256] Not enough memory to create the object d6ea23aa98845d5cffffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:05:57,142	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::empty()[39m (pid=8296, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[33m(pid=raylet)[0m E0512 05:05:57.123526  8191  8208 store.cc:256] Not enough memory to create the object 9b5ae94295c71ae7ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=14269)[0m E0512 05:05:57.123606 14269 14269 plasma_store_provider.cc:113] Failed to put object 9b5ae94295c71ae7ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=14269)[0m Waiting 1000ms for space to free up...
+2021-05-12 05:06:03,917	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::empty()[39m (pid=8301, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object d6ea23aa98845d5cffffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+2021-05-12 05:06:03,924	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::update_block()[39m (pid=14270, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 446, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 468, in ray._raylet.execute_task
+ray.exceptions.RayTaskError: [36mray::empty()[39m (pid=8296, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object 0dd1310ca489e197ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[33m(pid=raylet)[0m E0512 05:06:02.406064  8191  8208 store.cc:256] Not enough memory to create the object 7c526e8b34f20c79ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:02.414042  8191  8208 store.cc:256] Not enough memory to create the object 3bf25fe3c4243683ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8289)[0m E0512 05:06:02.421337  8289  8289 plasma_store_provider.cc:113] Failed to put object 7c526e8b34f20c79ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8289)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8296)[0m E0512 05:06:02.423427  8296  8296 plasma_store_provider.cc:113] Failed to put object 3bf25fe3c4243683ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 4000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:03.964984  8191  8208 store.cc:256] Not enough memory to create the object 19c5820232d0239affffffff0100000001000000, data_size=2147483897, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=8340)[0m E0512 05:06:04.398921  8340  8340 plasma_store_provider.cc:113] Failed to put object 977983e8064d9acaffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8340)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8343)[0m E0512 05:06:04.398283  8343  8343 plasma_store_provider.cc:113] Failed to put object e540e1afb40e3e10ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8343)[0m Waiting 16000ms for space to free up...
+[2m[36m(pid=8290)[0m E0512 05:06:04.191951  8290  8290 plasma_store_provider.cc:123] Failed to put object 19c5820232d0239affffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8290)[0m num clients with quota: 0
+[2m[36m(pid=8290)[0m quota map size: 0
+[2m[36m(pid=8290)[0m pinned quota map size: 0
+[2m[36m(pid=8290)[0m allocated bytes: 158829923480
+[2m[36m(pid=8290)[0m allocation limit: 160131514368
+[2m[36m(pid=8290)[0m pinned bytes: 176009794704
+[2m[36m(pid=8290)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8290)[0m (global lru) used: 0%
+[2m[36m(pid=8290)[0m (global lru) num objects: 0
+[2m[36m(pid=8290)[0m (global lru) num evictions: 43
+[2m[36m(pid=8290)[0m (global lru) bytes evicted: 41410374249
+[2m[36m(pid=8290)[0m ---
+[2m[36m(pid=8290)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8290)[0m ---
+[2m[36m(pid=8382)[0m E0512 05:06:04.398304  8382  8382 plasma_store_provider.cc:113] Failed to put object 9901b2eb9de52586ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8382)[0m Waiting 16000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:04.393659  8191  8208 store.cc:256] Not enough memory to create the object e540e1afb40e3e10ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:04.397797  8191  8208 store.cc:256] Not enough memory to create the object 9901b2eb9de52586ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:04.397883  8191  8208 store.cc:256] Not enough memory to create the object 977983e8064d9acaffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:04.657621  8191  8208 store.cc:256] Not enough memory to create the object 9b5ae94295c71ae7ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:04.768955  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: failed to connect to all addresses
+[2m[33m(pid=raylet)[0m E0512 05:06:04.770596  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: failed to connect to all addresses
+[2m[33m(pid=raylet)[0m E0512 05:06:04.770634  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: failed to connect to all addresses
+[2m[36m(pid=14269)[0m E0512 05:06:04.659636 14269 14269 plasma_store_provider.cc:113] Failed to put object 9b5ae94295c71ae7ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=14269)[0m Waiting 2000ms for space to free up...
+2021-05-12 05:06:04,915	WARNING worker.py:1091 -- A worker died or was killed while executing task 1211da137a2627cdffffffff01000000.
+[2m[33m(pid=raylet)[0m E0512 05:06:04.858855  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:04.858920  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+E0512 05:06:04.927445  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=1211da137a2627cdffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+[2m[36m(pid=8285)[0m E0512 05:06:07.244684  8285  8285 plasma_store_provider.cc:123] Failed to put object d389b09f14738697ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8285)[0m num clients with quota: 0
+[2m[36m(pid=8285)[0m quota map size: 0
+[2m[36m(pid=8285)[0m pinned quota map size: 0
+[2m[36m(pid=8285)[0m allocated bytes: 154543343276
+[2m[36m(pid=8285)[0m allocation limit: 160131514368
+[2m[36m(pid=8285)[0m pinned bytes: 180313149347
+[2m[36m(pid=8285)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8285)[0m (global lru) used: 0%
+[2m[36m(pid=8285)[0m (global lru) num objects: 0
+[2m[36m(pid=8285)[0m (global lru) num evictions: 50
+[2m[36m(pid=8285)[0m (global lru) bytes evicted: 45713731920
+[2m[36m(pid=8285)[0m ---
+[2m[36m(pid=8285)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8285)[0m ---
+[2m[36m(pid=8280)[0m E0512 05:06:07.244666  8280  8280 plasma_store_provider.cc:123] Failed to put object a8293f50fb871fb8ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8280)[0m num clients with quota: 0
+[2m[36m(pid=8280)[0m quota map size: 0
+[2m[36m(pid=8280)[0m pinned quota map size: 0
+[2m[36m(pid=8280)[0m allocated bytes: 154543343276
+[2m[36m(pid=8280)[0m allocation limit: 160131514368
+[2m[36m(pid=8280)[0m pinned bytes: 180313149347
+[2m[36m(pid=8280)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8280)[0m (global lru) used: 0%
+[2m[36m(pid=8280)[0m (global lru) num objects: 0
+[2m[36m(pid=8280)[0m (global lru) num evictions: 50
+[2m[36m(pid=8280)[0m (global lru) bytes evicted: 45713731920
+[2m[36m(pid=8280)[0m ---
+[2m[36m(pid=8280)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8280)[0m ---
+[2m[33m(pid=raylet)[0m E0512 05:06:07.242879  8191  8208 store.cc:256] Not enough memory to create the object d389b09f14738697ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:07.243840  8191  8208 store.cc:256] Not enough memory to create the object 2a1dbb6965407b73ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:07.243922  8191  8208 store.cc:256] Not enough memory to create the object a8293f50fb871fb8ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:07.244012  8191  8208 store.cc:256] Not enough memory to create the object 6428063dd8e227b2ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:07.244079  8191  8208 store.cc:256] Not enough memory to create the object 2c69dd7e04118e11ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:08.490343  8191  8208 store.cc:256] Not enough memory to create the object 3bf25fe3c4243683ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:06:07.244891 12217 12217 plasma_store_provider.cc:123] Failed to put object 2c69dd7e04118e11ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=12217)[0m num clients with quota: 0
+[2m[36m(pid=12217)[0m quota map size: 0
+[2m[36m(pid=12217)[0m pinned quota map size: 0
+[2m[36m(pid=12217)[0m allocated bytes: 154543343276
+[2m[36m(pid=12217)[0m allocation limit: 160131514368
+[2m[36m(pid=12217)[0m pinned bytes: 180313149347
+[2m[36m(pid=12217)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=12217)[0m (global lru) used: 0%
+[2m[36m(pid=12217)[0m (global lru) num objects: 0
+[2m[36m(pid=12217)[0m (global lru) num evictions: 50
+[2m[36m(pid=12217)[0m (global lru) bytes evicted: 45713731920
+[2m[36m(pid=12217)[0m ---
+[2m[36m(pid=12217)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=12217)[0m ---
+[2m[36m(pid=8273)[0m E0512 05:06:07.244709  8273  8273 plasma_store_provider.cc:123] Failed to put object 2a1dbb6965407b73ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8273)[0m num clients with quota: 0
+[2m[36m(pid=8273)[0m quota map size: 0
+[2m[36m(pid=8273)[0m pinned quota map size: 0
+[2m[36m(pid=8273)[0m allocated bytes: 154543343276
+[2m[36m(pid=8273)[0m allocation limit: 160131514368
+[2m[36m(pid=8273)[0m pinned bytes: 180313149347
+[2m[36m(pid=8273)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8273)[0m (global lru) used: 0%
+[2m[36m(pid=8273)[0m (global lru) num objects: 0
+[2m[36m(pid=8273)[0m (global lru) num evictions: 50
+[2m[36m(pid=8273)[0m (global lru) bytes evicted: 45713731920
+[2m[36m(pid=8273)[0m ---
+[2m[36m(pid=8273)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8273)[0m ---
+[2m[36m(pid=8408)[0m E0512 05:06:07.244774  8408  8408 plasma_store_provider.cc:123] Failed to put object 6428063dd8e227b2ffffffff0100000001000000 after 6 attempts. Plasma store status:
+[2m[36m(pid=8408)[0m num clients with quota: 0
+[2m[36m(pid=8408)[0m quota map size: 0
+[2m[36m(pid=8408)[0m pinned quota map size: 0
+[2m[36m(pid=8408)[0m allocated bytes: 154543343276
+[2m[36m(pid=8408)[0m allocation limit: 160131514368
+[2m[36m(pid=8408)[0m pinned bytes: 180313149347
+[2m[36m(pid=8408)[0m (global lru) capacity: 160131514368
+[2m[36m(pid=8408)[0m (global lru) used: 0%
+[2m[36m(pid=8408)[0m (global lru) num objects: 0
+[2m[36m(pid=8408)[0m (global lru) num evictions: 50
+[2m[36m(pid=8408)[0m (global lru) bytes evicted: 45713731920
+[2m[36m(pid=8408)[0m ---
+[2m[36m(pid=8408)[0m --- Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8408)[0m ---
+[2m[36m(pid=8296)[0m E0512 05:06:08.741951  8296  8296 plasma_store_provider.cc:113] Failed to put object 3bf25fe3c4243683ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8296)[0m Waiting 8000ms for space to free up...
+E0512 05:06:09.653646  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {CPU: 1, node:172.31.46.9: 0.0001, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=2f8d6fd873f67a76ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+2021-05-12 05:06:09,694	WARNING worker.py:1091 -- A worker died or was killed while executing task 2f8d6fd873f67a76ffffffff01000000.
+[2m[36m(pid=8273)[0m E0512 05:06:09.695432  8273  8273 plasma_store_provider.cc:113] Failed to put object d4c8df1573f72787ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=8280)[0m E0512 05:06:09.660517  8280  8280 plasma_store_provider.cc:113] Failed to put object 6038f2c12a302edbffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8280)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:09.660341  8191  8208 store.cc:256] Not enough memory to create the object 6038f2c12a302edbffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:09.688149  8191  8208 store.cc:256] Not enough memory to create the object 0004250665069233ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:09.695220  8191  8208 store.cc:256] Not enough memory to create the object d4c8df1573f72787ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:06:09.688318 12217 12217 plasma_store_provider.cc:113] Failed to put object 0004250665069233ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 1000ms for space to free up...
+[2m[36m(pid=14295)[0m E0512 05:06:09.966250 14295 14295 plasma_store_provider.cc:113] Failed to put object eb6c469102d97ad1ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=14295)[0m Waiting 1000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:09.966008  8191  8208 store.cc:256] Not enough memory to create the object eb6c469102d97ad1ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+2021-05-12 05:06:10,131	ERROR worker.py:1037 -- Possible unhandled error from worker: [36mray::bop()[39m (pid=8290, ip=172.31.46.9)
+  File "python/ray/_raylet.pyx", line 496, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 497, in ray._raylet.execute_task
+  File "python/ray/_raylet.pyx", line 1368, in ray._raylet.CoreWorker.store_task_outputs
+  File "python/ray/_raylet.pyx", line 140, in ray._raylet.check_status
+ray.exceptions.ObjectStoreFullError: Failed to put object 19c5820232d0239affffffff0100000001000000 in object store because it is full. Object size is 2147483897 bytes.
+The local object store is full of objects that are still in scope and cannot be evicted. Tip: Use the `ray memory` command to list active objects in the cluster.
+[2m[36m(pid=8282)[0m *** Aborted at 1620795970 (unix time) try "date -d @1620795970" if you are using GNU date ***
+[2m[36m(pid=8282)[0m PC: @                0x0 (unknown)
+[2m[36m(pid=8282)[0m *** SIGBUS (@0x7f759e086fe0) received by PID 8282 (TID 0x7f57ee064700) from PID 18446744072065937376; stack trace: ***
+[2m[36m(pid=8282)[0m     @     0x7f7d84346980 (unknown)
+[2m[36m(pid=8282)[0m     @     0x7f7d840d1daf (unknown)
+[2m[36m(pid=8282)[0m     @     0x7f7d82056421 execute_native_thread_routine_compat
+[2m[36m(pid=8282)[0m     @     0x7f7d8433b6db start_thread
+[2m[36m(pid=8282)[0m     @     0x7f7d8406471f clone
+[2m[36m(pid=8278)[0m *** Aborted at 1620795970 (unix time) try "date -d @1620795970" if you are using GNU date ***
+[2m[36m(pid=8278)[0m PC: @                0x0 (unknown)
+[2m[36m(pid=8278)[0m *** SIGBUS (@0x7f62ed29a000) received by PID 8278 (TID 0x7f6623a9e700) from PID 18446744073393512448; stack trace: ***
+[2m[36m(pid=8278)[0m     @     0x7f8bc2d42980 (unknown)
+[2m[36m(pid=8278)[0m     @     0x7f8bc2acdd1b (unknown)
+[2m[36m(pid=8278)[0m     @     0x7f8bc0a52421 execute_native_thread_routine_compat
+[2m[36m(pid=8278)[0m     @     0x7f8bc2d376db start_thread
+[2m[36m(pid=8278)[0m     @     0x7f8bc2a6071f clone
+[2m[36m(pid=8371)[0m *** Aborted at 1620795970 (unix time) try "date -d @1620795970" if you are using GNU date ***
+[2m[36m(pid=8371)[0m PC: @                0x0 (unknown)
+[2m[36m(pid=8371)[0m *** SIGBUS (@0x7f8c8dcd9fe0) received by PID 8371 (TID 0x7f740c5e6700) from PID 18446744071793647584; stack trace: ***
+[2m[36m(pid=8371)[0m     @     0x7f99a3abb980 (unknown)
+[2m[36m(pid=8371)[0m     @     0x7f99a3846daf (unknown)
+[2m[36m(pid=8371)[0m     @     0x7f99a17cb421 execute_native_thread_routine_compat
+[2m[36m(pid=8371)[0m     @     0x7f99a3ab06db start_thread
+[2m[36m(pid=8371)[0m     @     0x7f99a37d971f clone
+[2m[36m(pid=8292)[0m *** Aborted at 1620795970 (unix time) try "date -d @1620795970" if you are using GNU date ***
+[2m[36m(pid=8292)[0m PC: @                0x0 (unknown)
+[2m[36m(pid=8292)[0m *** SIGBUS (@0x7fbcaa94dfe0) received by PID 8292 (TID 0x7f9d7c527700) from PID 18446744072276467680; stack trace: ***
+[2m[36m(pid=8292)[0m     @     0x7fc31300c980 (unknown)
+[2m[36m(pid=8292)[0m     @     0x7fc312d97da3 (unknown)
+[2m[36m(pid=8292)[0m     @     0x7fc310d1c421 execute_native_thread_routine_compat
+[2m[36m(pid=8292)[0m     @     0x7fc3130016db start_thread
+[2m[36m(pid=8292)[0m     @     0x7fc312d2a71f clone
+[2m[36m(pid=8280)[0m E0512 05:06:10.661589  8280  8280 plasma_store_provider.cc:113] Failed to put object 6038f2c12a302edbffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=8280)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:10.661455  8191  8208 store.cc:256] Not enough memory to create the object 6038f2c12a302edbffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:10.693019  8191  8208 store.cc:256] Not enough memory to create the object 0004250665069233ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[33m(pid=raylet)[0m E0512 05:06:10.695989  8191  8208 store.cc:256] Not enough memory to create the object d4c8df1573f72787ffffffff0100000001000000, data_size=8589934841, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=12217)[0m E0512 05:06:10.693205 12217 12217 plasma_store_provider.cc:113] Failed to put object 0004250665069233ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=12217)[0m Waiting 2000ms for space to free up...
+[2m[36m(pid=8273)[0m E0512 05:06:10.696131  8273  8273 plasma_store_provider.cc:113] Failed to put object d4c8df1573f72787ffffffff0100000001000000 in object store because it is full. Object size is 8589934841 bytes.
+[2m[36m(pid=8273)[0m Waiting 2000ms for space to free up...
+[2m[33m(pid=raylet)[0m E0512 05:06:10.966818  8191  8208 store.cc:256] Not enough memory to create the object eb6c469102d97ad1ffffffff0100000001000000, data_size=34359738619, metadata_size=6, will send a reply of PlasmaError::OutOfMemory
+[2m[36m(pid=14295)[0m E0512 05:06:10.966909 14295 14295 plasma_store_provider.cc:113] Failed to put object eb6c469102d97ad1ffffffff0100000001000000 in object store because it is full. Object size is 34359738619 bytes.
+[2m[36m(pid=14295)[0m Waiting 2000ms for space to free up...
+E0512 05:06:11.624831  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=9a0c190a8c98767effffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+2021-05-12 05:06:11,627	WARNING worker.py:1091 -- A worker died or was killed while executing task 9a0c190a8c98767effffffff01000000.
+[2m[33m(pid=raylet)[0m E0512 05:06:11.628077  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.628960  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.628996  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629024  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629072  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629094  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629145  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629163  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629196  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629221  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629242  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629263  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629290  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629362  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629390  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629418  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629441  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629462  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629496  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629552  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629573  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629593  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629616  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629644  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629663  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629714  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.629997  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630030  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630054  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630101  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630123  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630149  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630170  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630192  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630213  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630275  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630321  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630344  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630367  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630388  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630406  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630425  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630450  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630470  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630491  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630517  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630537  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630582  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630601  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630620  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630656  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630676  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630724  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630748  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630771  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630839  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630858  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630947  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630976  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.630998  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.631017  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.631062  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.631085  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+E0512 05:06:11.817994  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {CPU: 1, node:172.31.46.9: 0.0001, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=empty, function_hash=6cf261643fa95aa9ba2c6b137ff0ae006c33619b}, task_id=31578848786ae4f0ffffffff01000000, task_name=empty(), job_id=01000000, num_args=4, num_returns=1
+2021-05-12 05:06:11,824	WARNING worker.py:1091 -- A worker died or was killed while executing task 31578848786ae4f0ffffffff01000000.
+E0512 05:06:11.937068  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {CPU: 1, node:172.31.46.9: 0.0001, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=empty, function_hash=6cf261643fa95aa9ba2c6b137ff0ae006c33619b}, task_id=3e59ebdee5fd5f23ffffffff01000000, task_name=empty(), job_id=01000000, num_args=4, num_returns=1
+2021-05-12 05:06:11,956	WARNING worker.py:1091 -- A worker died or was killed while executing task 0562111572080b70ffffffff01000000.
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820109  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820327  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820381  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820418  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820541  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.820575  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942031  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942138  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942159  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942174  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942217  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942234  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942277  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942292  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942306  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942322  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942338  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942353  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942370  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942421  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942440  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942457  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942474  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942493  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942512  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942576  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942610  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942627  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942643  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942663  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.942682  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943226  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943312  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943328  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943361  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943400  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943415  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.943658  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944017  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944043  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944061  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944101  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944115  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944128  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944142  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944155  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944169  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944183  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944201  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944218  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944231  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944247  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944263  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944303  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944319  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944334  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944605  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944641  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944696  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944715  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.944730  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945685  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945710  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945792  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945812  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945829  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945847  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945891  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:11.945907  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+E0512 05:06:12.019134  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=a5450a345f8e64bfffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+2021-05-12 05:06:12,027	WARNING worker.py:1091 -- A worker died or was killed while executing task a5450a345f8e64bfffffffff01000000.
+[2m[33m(pid=raylet)[0m E0512 05:06:12.022907  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.023994  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.024106  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.025321  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.025383  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.025736  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026315  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026371  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026427  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026480  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026501  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026521  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.026542  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.027585  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.027678  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.029848  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.029924  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.029989  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.030061  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036237  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036422  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036466  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036506  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036535  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036571  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.036617  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.039898  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040073  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040112  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040196  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040225  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040254  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040308  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040335  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040374  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040472  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040498  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040526  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040555  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040583  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040613  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040638  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040660  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040686  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040716  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040746  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040774  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040832  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040859  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040887  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040910  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040936  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.040990  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041018  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041046  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041103  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041137  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041225  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041250  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041281  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041357  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041420  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m E0512 05:06:12.041445  8191  8191 node_manager.cc:535] Failed to send local GC request: IOError: 14: Connection reset by peer
+[2m[33m(pid=raylet)[0m *** Aborted at 1620795972 (unix time) try "date -d @1620795972" if you are using GNU date ***
+[2m[33m(pid=raylet)[0m PC: @                0x0 (unknown)
+[2m[33m(pid=raylet)[0m *** SIGBUS (@0x7eda4f078018) received by PID 8191 (TID 0x7f3888ff9700) from PID 1325891608; stack trace: ***
+[2m[33m(pid=raylet)[0m     @     0x7f38915f9980 (unknown)
+[2m[33m(pid=raylet)[0m     @     0x5631677c0420 dlmalloc
+[2m[33m(pid=raylet)[0m     @     0x5631677c1732 plasma::internal_memalign()
+[2m[33m(pid=raylet)[0m     @     0x5631677c3b91 plasma::PlasmaAllocator::Memalign()
+[2m[33m(pid=raylet)[0m     @     0x5631677b9055 plasma::PlasmaStore::AllocateMemory()
+[2m[33m(pid=raylet)[0m     @     0x5631677bb0d8 plasma::PlasmaStore::CreateObject()
+[2m[33m(pid=raylet)[0m     @     0x5631677bb87f plasma::PlasmaStore::ProcessMessage()
+[2m[33m(pid=raylet)[0m     @     0x5631677aef0b std::_Function_handler<>::_M_invoke()
+[2m[33m(pid=raylet)[0m     @     0x5631677cc882 _ZNSt17_Function_handlerIFvSt10shared_ptrIN3ray16ClientConnectionEElRKSt6vectorIhSaIhEEEZN6plasma6Client6CreateESt8functionIFNS1_6StatusES0_ISB_ENSA_7flatbuf11MessageTypeES8_EEON5boost4asio19basic_stream_socketINSK_7generic15stream_protocolENSK_8executorEEEEUlS3_lS8_E_E9_M_invokeERKSt9_Any_dataS3_lS8_
+[2m[33m(pid=raylet)[0m     @     0x563167a130ae ray::ClientConnection::ProcessMessage()
+[2m[33m(pid=raylet)[0m     @     0x563167a0ff6a boost::asio::detail::read_op<>::operator()()
+[2m[33m(pid=raylet)[0m     @     0x563167a10fb2 boost::asio::detail::reactive_socket_recv_op<>::do_complete()
+[2m[33m(pid=raylet)[0m     @     0x563167d7b70f boost::asio::detail::scheduler::do_run_one()
+[2m[33m(pid=raylet)[0m     @     0x563167d7cc11 boost::asio::detail::scheduler::run()
+[2m[33m(pid=raylet)[0m     @     0x563167d7dc42 boost::asio::io_context::run()
+[2m[33m(pid=raylet)[0m     @     0x5631677bcc5e plasma::PlasmaStoreRunner::Start()
+[2m[33m(pid=raylet)[0m     @     0x7f3891c61a50 (unknown)
+[2m[33m(pid=raylet)[0m     @     0x7f38915ee6db start_thread
+[2m[33m(pid=raylet)[0m     @     0x7f3890ef771f clone
+E0512 05:06:14.337067  8091  9373 core_worker.cc:419] Will resubmit task after a 5000ms delay: Type=NORMAL_TASK, Language=PYTHON, Resources: {node:172.31.46.9: 0.0001, CPU: 1, }, function_descriptor={type=PythonFunctionDescriptor, module_name=nums.core.systems.numpy_compute, class_name=, function_name=bop, function_hash=9173f66654c3a0d277d4b20a3f131e5ea28c1624}, task_id=3889f909b8acd480ffffffff01000000, task_name=bop(), job_id=01000000, num_args=16, num_returns=1
+E0512 05:06:14.469635  8091  9373 direct_task_transport.cc:333] The worker failed to receive a response from the local raylet. This is most likely because the local raylet has crahsed.
+F0512 05:06:14.469753  8091  9373 direct_task_transport.cc:336] IOError: 14: Connection reset by peer
+*** Check failure stack trace: ***
+    @     0x7f640496787d  google::LogMessage::Fail()
+    @     0x7f6404968cec  google::LogMessage::SendToLog()
+    @     0x7f6404967559  google::LogMessage::Flush()
+    @     0x7f6404967771  google::LogMessage::~LogMessage()
+[2m[36m(pid=14002)[0m E0512 05:06:14.465035 14002 14131 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=14002)[0m E0512 05:06:14.465549 14002 14131 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466179  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466593  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466661  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466689  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466733  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466758  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8280)[0m E0512 05:06:14.466786  8280  8808 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8276)[0m E0512 05:06:14.467456  8276  8689 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8276)[0m E0512 05:06:14.473567  8276  8689 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8276)[0m E0512 05:06:14.473632  8276  8689 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8276)[0m E0512 05:06:14.473659  8276  8689 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8299)[0m E0512 05:06:14.473644  8299  8936 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed    @     0x7f640491abe9  ray::RayLog::~RayLog()
+
+[2m[36m(pid=8299)[0m E0512 05:06:14.474514  8299  8936 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8299)[0m E0512 05:06:14.474575  8299  8936 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8299)[0m E0512 05:06:14.474606  8299  8936 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.473872  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474259  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474298  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474319  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474339  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474360  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474396  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8382)[0m E0512 05:06:14.474418  8382  8913 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=14269)[0m E0512 05:06:14.463384 14269 14341 core_worker.cc:708] Raylet failed. Shutting down.
+[2m[36m(pid=12217)[0m E0512 05:06:14.457975 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458214 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458250 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458292 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458319 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458364 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=12217)[0m E0512 05:06:14.458392 12217 12338 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8291)[0m E0512 05:06:14.469734  8291  9162 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8284)[0m E0512 05:06:14.470108  8284  9179 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8284)[0m E0512 05:06:14.470607  8284  9179 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8284)[0m E0512 05:06:14.470636  8284  9179 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8284)[0m E0512 05:06:14.470661  8284  9179 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.457844  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458011  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458055  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458081  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458128  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458180  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458210  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458241  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8340)[0m E0512 05:06:14.458282  8340  8946 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468658  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468792  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468825  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468864  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468900  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468935  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8273)[0m E0512 05:06:14.468966  8273  8796 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8385)[0m E0512 05:06:14.461534  8385  9299 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8385)[0m E0512 05:06:14.462195  8385  9299 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8385)[0m E0512 05:06:14.462252  8385  9299 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8385)[0m E0512 05:06:14.462282  8385  9299 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8385)[0m E0512 05:06:14.462325  8385  9299 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=14295)[0m E0512 05:06:14.471662 14295 14418 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=14295)[0m E0512 05:06:14.471783 14295 14418 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+    @     0x7f64045ed90c  _ZZN3ray29CoreWorkerDirectTaskSubmitter24RequestNewWorkerIfNeededERKSt5tupleIIiSt6vectorINS_8ObjectIDESaIS3_EENS_7ActorIDEEEPKNS_3rpc7AddressEENKUlRKNS_6StatusERKNSA_23RequestWorkerLeaseReplyEE_clESG_SJ_
+    @     0x7f640462c5d5  ray::rpc::ClientCallImpl<>::OnReplyReceived()
+    @     0x7f6404589320  _ZN5boost4asio6detail18completion_handlerIZN3ray3rpc17ClientCallManager29PollEventsFromCompletionQueueEiEUlvE_E11do_completeEPvPNS1_19scheduler_operationERKNS_6system10error_codeEm
+    @     0x7f64049c969f  boost::asio::detail::scheduler::do_run_one()
+[2m[36m(pid=8343)[0m E0512 05:06:14.469002  8343  9118 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8343)[0m E0512 05:06:14.469590  8343  9118 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8343)[0m E0512 05:06:14.469622  8343  9118 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8343)[0m E0512 05:06:14.469641  8343  9118 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8343)[0m E0512 05:06:14.469656  8343  9118 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:06:14.470796  8301  8922 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:06:14.470896  8301  8922 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:06:14.470919  8301  8922 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:06:14.470935  8301  8922 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8301)[0m E0512 05:06:14.470949  8301  8922 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8289)[0m E0512 05:06:14.468883  8289  9157 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8289)[0m E0512 05:06:14.472157  8289  9157 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8289)[0m E0512 05:06:14.472271  8289  9157 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8289)[0m E0512 05:06:14.472309  8289  9157 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8289)[0m E0512 05:06:14.472337  8289  9157 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8379)[0m E0512 05:06:14.436728  8379  9080 core_worker.cc:708] Raylet failed. Shutting down.
+[2m[36m(pid=8296)[0m E0512 05:06:14.459095  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459277  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459306  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459336  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459360  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459391  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459419  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459443  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8296)[0m E0512 05:06:14.459468  8296  8964 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8285)[0m E0512 05:06:14.474159  8285  8831 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8285)[0m E0512 05:06:14.474402  8285  8831 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8285)[0m E0512 05:06:14.474442  8285  8831 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8285)[0m E0512 05:06:14.474463  8285  8831 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8285)[0m E0512 05:06:14.474511  8285  8831 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8399)[0m E0512 05:06:14.465958  8399  9282 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8399)[0m E0512 05:06:14.466068  8399  9282 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8399)[0m E0512 05:06:14.466094  8399  9282 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8399)[0m E0512 05:06:14.466111  8399  9282 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=8399)[0m E0512 05:06:14.466130  8399  9282 core_worker.cc:1118] Failed to send global GC request: IOError: 14: Socket closed
+[2m[36m(pid=14542)[0m E0512 05:06:14.544960 14542 15246 core_worker.cc:708] Raylet failed. Shutting down.
+    @     0x7f64049ca461  boost::asio::detail::scheduler::run()
+    @     0x7f64049cb3b2  boost::asio::io_context::run()
+    @     0x7f6404569c70  ray::CoreWorker::RunIOService()
+    @     0x7f6401f4b421  execute_native_thread_routine_compat
+    @     0x7f640920f6db  start_thread
+    @     0x7f6408f3871f  clone
