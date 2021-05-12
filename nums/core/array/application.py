@@ -1014,12 +1014,11 @@ class ArrayApplication(object):
         return ret
 
     def lu_block_decompose(self, X: BlockArray):
-
         grid = X.grid.copy()
         # P: BlockArray = BlockArray.from_np(np.zeros(X.shape), grid.block_shape, X.dtype, self.system)
-        P: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
-        L: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
-        U: BlockArray = self.zeros(X.shape, grid.block_shape, dtype=X.dtype)
+        P: BlockArray = BlockArray(grid, self.system)
+        L: BlockArray = BlockArray(grid, self.system)
+        U: BlockArray = BlockArray(grid, self.system)
         if len(X.blocks) == 1:
             # Only one block, perform single-block lu decomp
             X_block: Block = X.blocks[0, 0]
@@ -1031,7 +1030,6 @@ class ArrayApplication(object):
             # sanity check to ensure nice even recursion
             assert size * 2 == X.blocks.shape[0]
             subshape = (X.shape[0]//2, X.shape[1]//2)
-
             M1 = BlockArray.from_blocks(X.blocks[:size, :size], subshape, self.system)
             M2 = BlockArray.from_blocks(X.blocks[:size, size:], subshape, self.system)
             M3 = BlockArray.from_blocks(X.blocks[size:, :size], subshape, self.system)
@@ -1047,13 +1045,41 @@ class ArrayApplication(object):
             L.blocks[:size, :size] = L1.blocks
             L.blocks[size:, :size] = (-L3 @ S).blocks
             L.blocks[size:, size:] = L3.blocks
+            for block_row in L.blocks[:size, size:]:
+                for block in block_row:
+                    syskwargs = {"grid_entry": block.grid_entry, "grid_shape": grid.grid_shape}
+                    block.oid = self.system.new_block("zeros",
+                        block.grid_entry,
+                        grid.to_meta(),
+                        syskwargs=syskwargs)
 
             U.blocks[:size, :size] = U1.blocks
             U.blocks[:size, size:] = (-T @ (P1 @ M2) @ U3).blocks
             U.blocks[size:, size:] = U3.blocks
+            for block_row in U.blocks[size:, :size]:
+                for block in block_row:
+                    syskwargs = {"grid_entry": block.grid_entry, "grid_shape": grid.grid_shape}
+                    block.oid = self.system.new_block("zeros",
+                        block.grid_entry,
+                        grid.to_meta(),
+                        syskwargs=syskwargs)
 
             P.blocks[:size, :size] = P1.blocks
             P.blocks[size:, size:] = P2.blocks
+            for block_row in P.blocks[:size, size:]:
+                for block in block_row:
+                    syskwargs = {"grid_entry": block.grid_entry, "grid_shape": grid.grid_shape}
+                    block.oid = self.system.new_block("zeros",
+                        block.grid_entry,
+                        grid.to_meta(),
+                        syskwargs=syskwargs)
+            for block_row in P.blocks[size:, :size]:
+                for block in block_row:
+                    syskwargs = {"grid_entry": block.grid_entry, "grid_shape": grid.grid_shape}
+                    block.oid = self.system.new_block("zeros",
+                        block.grid_entry,
+                        grid.to_meta(),
+                        syskwargs=syskwargs)
         return P, L, U
 
     def lu_inv(self, X: BlockArray):
