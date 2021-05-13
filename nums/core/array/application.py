@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+import time
 from typing import List
 
 import numpy as np
@@ -865,11 +865,15 @@ class ArrayApplication(object):
         return R
 
     def indirect_tsqr(self, X: BlockArray, reshape_output=True):
+        # start = time.time()
         shape = X.shape
         block_shape = X.block_shape
         R_shape = (shape[1], shape[1])
         R_block_shape = (block_shape[1], block_shape[1])
         tsR = self.indirect_tsr(X, reshape_output=False)
+        # _ = tsR.get()
+        # tsr_end = time.time()
+        # tsr_time = tsr_end - start
 
         # Compute inverse of R.
         tsR_inverse = self.inv(tsR)
@@ -885,7 +889,11 @@ class ArrayApplication(object):
             R = tsR
 
         Q = X @ R_inverse
-        return Q, R
+        # _ = Q.get()
+        # q_end = time.time()
+        # q_time = q_end - tsr_end
+
+        return Q, R#, tsr_time, q_time
 
     def direct_tsqr(self, X, reshape_output=True):
         assert len(X.shape) == 2
@@ -982,7 +990,7 @@ class ArrayApplication(object):
         nonsquare_block = X.block_shape[0] != X.block_shape[1]
 
         if single_block or nonsquare_block:
-            X = X.reshape(block_shape=(16, 16))
+            X = X.reshape(block_shape=(X.shape[0]//4, X.shape[0]//4))
 
         # Setup metadata
         full_shape = X.shape
