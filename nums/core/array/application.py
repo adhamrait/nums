@@ -1113,7 +1113,7 @@ class ArrayApplication(object):
         # Particularly useful for least-squares regression on a large data corpus
 
         # Step 1: Calculate the U using Cholesky, where X = U^TU
-        U = self.cholesky_nums(X)
+        U = self.cholesky_blk(X)
 
         # Step 2: Compute U^-1
         U_inv = self.inv_uppertri(U)
@@ -1205,13 +1205,13 @@ class ArrayApplication(object):
         grid = X.grid.copy()
         if single_block:
             # only one block means we do regular cholesky
-            A_TL = self.cholesky(X).T
+            A_TL = self.cholesky(X)
         else:
             # Must do blocked cholesky
 
             # cholesky on A_TL
             A_TL = BlockArray.from_blocks(X.blocks[:1, :1],(b,b), self.system)
-            A_TL = self.cholesky(A_TL).T
+            A_TL = self.cholesky(A_TL)
 
             # A_TR = inv(A_TL).T @ A_TR
             A_TR = BlockArray.from_blocks(X.blocks[:1, 1:], (b,n-b), self.system)
@@ -1221,13 +1221,12 @@ class ArrayApplication(object):
             # A_BR = A_BR - A_TR.T @ A_TR
             A_BR = BlockArray.from_blocks(X.blocks[1:, 1:],(n-b,n-b), self.system)
             A_BR = A_BR - (A_TR.T @ A_TR)
-
             while A_TL.shape[0] < n:
                 A_TL_size = A_TL.shape[0]
                 A_00 = A_TL
                 if A_TL.shape[0] == n-b:
                     A_01 = A_TR
-                    A_11 = self.cholesky(A_BR).T
+                    A_11 = self.cholesky(A_BR)
                     A_TL = self.zeros((A_TL_size+b,A_TL_size+b),block_shape)
                     for i in range(A_TL_size // b):
                         for j in range(A_TL_size // b):
@@ -1243,7 +1242,7 @@ class ArrayApplication(object):
                     A_12 = BlockArray.from_blocks(A_BR.blocks[:1, 1:], (b,n-A_TL_size-b), self.system)
                     A_22 = BlockArray.from_blocks(A_BR.blocks[1:, 1:], (n-A_TL_size-b,n-A_TL_size-b), self.system)
 
-                    A_11 = self.cholesky(A_11).T
+                    A_11 = self.cholesky(A_11)
 
                     A_11_inv_T = self.inv(A_11).T
                     A_12 = A_11_inv_T @ A_12

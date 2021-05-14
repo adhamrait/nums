@@ -268,7 +268,7 @@ class ComputeCls(ComputeImp):
         return np.linalg.qr(arr, mode=mode)
 
     def cholesky(self, arr):
-        return np.linalg.cholesky(arr)
+        return np.linalg.cholesky(arr).T
 
     def svd(self, arr):
         u, sigma, vT = np.linalg.svd(arr)
